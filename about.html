@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | 3D Printing Service Bureau</title>
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- LOADER -->
+    <div id="loader"><div class="spinner-border text-primary" role="status"></div></div>
+    <!-- NAVBAR (Same) -->
+    <nav class="navbar navbar-expand-lg fixed-top sticky">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-box-seam-fill me-2 fs-3 text-accent"></i>
+                <span class="fw-bold text-uppercase fs-4">3D<span class="text-accent">BUREAU</span></span>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="materials.html">Materials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="register.html" class="btn btn-login nav-link px-4 py-2">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO -->
+    <section class="hero" style="min-height: 50vh; padding: 120px 0 80px;">
+        <div class="hero-bg" style="background: url('https://images.pexels.com/photos/8327439/pexels-photo-8327439.jpeg') center/cover;"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center">
+            <h1 class="reveal">Decades of <span class="text-accent">Precision</span> Engineering</h1>
+            <p class="mx-auto reveal" style="transition-delay: 0.1s;">Pioneering additive manufacturing solutions for the global industrial landscape.</p>
+        </div>
+    </section>
+
+    <!-- 2. OUR STORY -->
+    <section class="story">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal">
+                    <img src="https://images.pexels.com/photos/5926514/pexels-photo-5926514.jpeg" class="img-fluid rounded-4 shadow" alt="Founding">
+                </div>
+                <div class="col-lg-6 reveal" style="transition-delay: 0.2s;">
+                    <h2 class="text-white mb-4">Born From A Vision To <br> <span class="text-accent">Democratize Manufacturing.</span></h2>
+                    <p class="text-body mb-4">Established in 2015, we began as a small research lab focused on material science and high-precision nozzles. Today, we operate one of the most advanced 3D printing bureaus in the region, serving Fortune 500 companies.</p>
+                    <div class="row g-3">
+                        <div class="col-sm-6"><div class="p-3 border border-light border-opacity-10 rounded"><h4 class="text-white mb-0">ISO 9001</h4><p class="small text-body mb-0">Certified Logistics</p></div></div>
+                        <div class="col-sm-6"><div class="p-3 border border-light border-opacity-10 rounded"><h4 class="text-white mb-0">24/7</h4><p class="small text-body mb-0">Production Uptime</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TEAM -->
+    <section class="team bg-dark">
+        <div class="container">
+            <div class="section-title text-center reveal"><h2 class="text-white">Expert Engineering Team</h2></div>
+            <div class="row g-4 mt-5">
+                <div class="col-md-4 reveal"><div class="card bg-transparent text-center px-4"><div class="card-icon"><i class="bi bi-person-badge"></i></div><h4 class="text-white">Dr. Sarah K.</h4><p class="text-accent small mb-0">Chief of Material Science</p></div></div>
+                <div class="col-md-4 reveal" style="transition-delay: 0.1s;"><div class="card bg-transparent text-center px-4"><div class="card-icon"><i class="bi bi-gear-wide-connected"></i></div><h4 class="text-white">James Miller</h4><p class="text-accent small mb-0">Lead Systems Architect</p></div></div>
+                <div class="col-md-4 reveal" style="transition-delay: 0.2s;"><div class="card bg-transparent text-center px-4"><div class="card-icon"><i class="bi bi-robot"></i></div><h4 class="text-white">Elena Vance</h4><p class="text-accent small mb-0">Automation Specialist</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. QUALITY CONTROL -->
+    <section class="qc">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-lg-2 reveal"><img src="https://images.pexels.com/photos/8327443/pexels-photo-8327443.jpeg" class="img-fluid rounded-4" alt="QC"></div>
+                <div class="col-lg-6 order-lg-1 reveal"><h2 class="text-white">Rigorous Benchmarks</h2><p class="text-body mb-4">Every unit undergoes digital twin validation and structural stress testing to ensure performance in critical environments.</p><ul class="list-unstyled text-white"><li class="mb-2"><i class="bi bi-check2-all text-accent me-2"></i> Laser CMM Verification</li><li class="mb-2"><i class="bi bi-check2-all text-accent me-2"></i> Mechanical Yield Testing</li><li><i class="bi bi-check2-all text-accent me-2"></i> Thermal Stress Analysis</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MISSION CTA -->
+    <section class="cta bg-accent text-center py-5"><div class="container"><h2 class="text-white fw-bold mb-4">Join The Future Of Additive Manufacturing</h2><a href="contact.html" class="btn btn-dark px-5 py-3 rounded-pill fw-bold">Connect With Us</a></div></section>
+
+    <!-- FOOTER (Same) -->
+    <footer><div class="container text-center text-body small"><p>&copy; 2026 3D Bureau. Precision Industrial Standards.</p></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

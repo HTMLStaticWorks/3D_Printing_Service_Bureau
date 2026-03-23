@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Printing Service Bureau | Home 2</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-logo-container" href="index.html">
+                <i class="fas fa-cube brand-logo-icon"></i>
+                <span class="brand-name">PRECISION 3D</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title brand-name fs-4" id="offcanvasNavbarLabel">PRECISION 3D</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="home2.html">Home 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dashboard
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="dashboardDropdown">
+                                <li><a class="dropdown-item" href="dashboard-admin.html">Admin Dashboard</a></li>
+                                <li><a class="dropdown-item" href="dashboard.html">User Dashboard</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center mt-4 mt-lg-0 gap-2 ms-lg-3">
+                        <a href="login.html" class="btn btn-outline-primary header-btn">Login</a>
+                        <a href="signup.html" class="btn btn-primary header-btn">Sign Up</a>
+                        <button class="rtl-toggle" id="rtl-toggle">RTL</button>
+                        <button class="theme-switch ms-2" id="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <header class="hero-section" style="background-image: url('assets/images/hero2.png');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center mx-auto">
+            <div class="fade-in">
+                <span class="section-tag">Direct Manufacturing</span>
+                <h1 class="hero-title">Precision Metal <br>3D Printing Bureau</h1>
+                <p class="lead mb-4">Advanced metal printing solutions for aerospace and automotive industries with
+                    high-performance alloys.</p>
+                <div class="d-flex justify-content-center">
+                    <a href="dashboard.html" class="btn btn-primary btn-lg me-3">Upload Your 3D Model</a>
+                    <a href="services.html" class="btn btn-outline-light btn-lg">Browse Materials</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 2: Core Features -->
+    <section class="core-features">
+        <div class="container">
+            <div class="row g-5 side-by-side-row align-items-stretch">
+                <!-- Text Content (First in source for mobile: Top) -->
+                <div class="col-lg-6 fade-in d-flex align-items-center order-lg-2">
+                    <div class="text-content-wrapper py-4">
+                        <span class="section-tag">Innovation First</span>
+                        <h2 class="mb-4">Beyond the Limits of Manufacturing</h2>
+                        <p class="mb-4">Our specialized DMLS technology allows for the creation of lightweight,
+                            high-strength metal parts that were previously impossible to manufacture through traditional
+                            methods.</p>
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-layer-group text-secondary fa-2x pt-1 me-3"></i>
+                                    <div>
+                                        <h5>Complex Latices</h5>
+                                        <p class="small text-secondary">Optimized structures for weight reduction and
+                                            strength.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-thermometer-half text-secondary fa-2x pt-1 me-3"></i>
+                                    <div>
+                                        <h5>Heat Resistant</h5>
+                                        <p class="small text-secondary">Print in Inconel, Cobalt Chrome and other
+                                            superalloys.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image (Second in source for mobile: Bottom / First on Desktop) -->
+                <div class="col-lg-6 mb-5 mb-lg-0 fade-in side-by-side-img-col order-lg-1">
+                    <div class="side-by-side-img-container">
+                        <img src="assets/images/metal.png" class="img-fluid rounded-5 shadow-lg side-by-side-img"
+                            alt="Metal Printing">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Specialized Services -->
+    <section class="specialized-services">
+        <div class="container">
+            <div class="section-title fade-in text-center">
+                <span class="section-tag">Expertise</span>
+                <h2>Our Signature Manufacturing Technologies</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="custom-card h-100 bg-transparent border-secondary border-opacity-25 p-4 text-center">
+                        <div class="icon-box bg-secondary bg-opacity-10 ratio ratio-1x1 mx-auto mb-4"
+                            style="width: 80px; border-radius: 50%;">
+                            <i
+                                class="fas fa-bolt text-secondary d-flex align-items-center justify-content-center fs-2"></i>
+                        </div>
+                        <h3>DMLS Printing</h3>
+                        <p class="opacity-75">Direct Metal Laser Sintering for high-performance functional metal
+                            components with extreme heat resistance.</p>
+                        <a href="services.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="custom-card h-100 bg-transparent border-secondary border-opacity-25 p-4 text-center">
+                        <div class="icon-box bg-secondary bg-opacity-10 ratio ratio-1x1 mx-auto mb-4"
+                            style="width: 80px; border-radius: 50%;">
+                            <i
+                                class="fas fa-sun text-secondary d-flex align-items-center justify-content-center fs-2"></i>
+                        </div>
+                        <h3>SLS Nylon</h3>
+                        <p class="opacity-75">Selective Laser Sintering for durable, production-ready parts without the
+                            need for support structures.</p>
+                        <a href="services.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in mx-auto">
+                    <div class="custom-card h-100 bg-transparent border-secondary border-opacity-25 p-4 text-center">
+                        <div class="icon-box bg-secondary bg-opacity-10 ratio ratio-1x1 mx-auto mb-4"
+                            style="width: 80px; border-radius: 50%;">
+                            <i
+                                class="fas fa-gem text-secondary d-flex align-items-center justify-content-center fs-2"></i>
+                        </div>
+                        <h3>SLA Precision</h3>
+                        <p class="opacity-75">Stereolithography for smooth surfaces and high-detail molds, casting
+                            patterns, and functional prototypes.</p>
+                        <a href="services.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Specifications / Capabilities -->
+    <section class="machine-specs">
+        <div class="container">
+            <div class="row g-5 side-by-side-row align-items-stretch">
+                <!-- Text Content (First in source for mobile: Top) -->
+                <div class="col-lg-6 fade-in d-flex align-items-center order-lg-1">
+                    <div class="text-content-wrapper py-4">
+                        <span class="section-tag">Machine Stats</span>
+                        <h2 class="mb-4">Industrial Grade Capacity</h2>
+                        <ul class="list-group list-group-flush bg-transparent">
+                            <li
+                                class="list-group-item bg-transparent border-bottom px-0 py-3 d-flex justify-content-between">
+                                <span>Maximum Build Volume</span>
+                                <span class="fw-bold text-secondary">600 x 600 x 400 mm</span>
+                            </li>
+                            <li
+                                class="list-group-item bg-transparent border-bottom px-0 py-3 d-flex justify-content-between">
+                                <span>Minimum Layer Thickness</span>
+                                <span class="fw-bold text-secondary">20 Microns</span>
+                            </li>
+                            <li
+                                class="list-group-item bg-transparent border-bottom px-0 py-3 d-flex justify-content-between">
+                                <span>Dimensional Accuracy</span>
+                                <span class="fw-bold text-secondary">± 0.1 mm</span>
+                            </li>
+                            <li
+                                class="list-group-item bg-transparent border-bottom px-0 py-3 d-flex justify-content-between">
+                                <span>Available Materials</span>
+                                <span class="fw-bold text-secondary">80+ Options</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Image (Second in source for mobile: Bottom) -->
+                <div class="col-lg-6 fade-in order-lg-2 side-by-side-img-col">
+                    <div class="side-by-side-img-container">
+                        <img src="assets/images/sls.png" class="img-fluid rounded-5 side-by-side-img"
+                            alt="Industrial Machine">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Portfolio / Success Stories -->
+    <section class="portfolio-preview bg-light">
+        <div class="container">
+            <div class="section-title fade-in text-center">
+                <span class="section-tag">Portfolio</span>
+                <h2>Recent Industrial Highlights</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 fade-in">
+                    <div class="custom-card p-0 border-0 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4160103/pexels-photo-4160103.jpeg" class="w-100"
+                            style="height: 300px; object-fit: cover;" alt="Aero">
+                        <div class="p-4">
+                            <h5>Aero-Propulsion Gear</h5>
+                            <p class="small text-secondary">Material: Titanium Grade 5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="custom-card p-0 border-0 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/3845129/pexels-photo-3845129.jpeg" class="w-100"
+                            style="height: 300px; object-fit: cover;" alt="Med">
+                        <div class="p-4">
+                            <h5>Biomedical Scaffold</h5>
+                            <p class="small text-secondary">Material: Medical Resin</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="custom-card p-0 border-0 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format"
+                            class="w-100" style="height: 300px; object-fit: cover;" alt="Auto">
+                        <div class="p-4">
+                            <h5>Engine Cooling Block</h5>
+                            <p class="small text-secondary">Material: Aluminum AlSi10Mg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: CTA Banner 2 -->
+    <section class="cta-banner-2" style="background-color: var(--secondary); padding: 80px 0;">
+        <div class="container text-center">
+            <h2 class="text-white mb-4">Integrate 3D Printing Into Your Workflow</h2>
+            <p class="text-white mb-4 opacity-75">Connect with our engineering team for specialized manufacturing
+                consultations.</p>
+            <div class="d-flex justify-content-center">
+                <a href="contact.html" class="btn btn-dark btn-lg px-5 me-2">Speak With Expert</a>
+                <a href="dashboard.html" class="btn btn-outline-light btn-lg px-5">Get Web Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer same as index -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <a class="footer-logo brand-logo-container" href="index.html">
+                        <i class="fas fa-cube brand-logo-icon"></i>
+                        <span class="brand-name">PRECISION 3D</span>
+                    </a>
+                    <p class="text-secondary">Next-generation 3D printing bureau providing industrial manufacturing
+                        solutions across the globe.</p>
+                    <a href="mailto:info@precision3d.com" class="footer-email">info@precision3d.com</a>
+                    <div class="footer-social-icons">
+                        <a href="#" class="footer-social-icon instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon x-twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">FDM Printing</a></li>
+                        <li><a href="#">SLA Lithography</a></li>
+                        <li><a href="#">SLS Powder Prints</a></li>
+                        <li><a href="#">Metal Manufacturing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="text-secondary">Subscribe to get the latest manufacturing insights.</p>
+                    <form class="mt-4">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row align-items-center footer-bottom">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2026 Precision 3D. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed by <span class="text-secondary">Senior Frontend Developer</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

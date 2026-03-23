@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Bureau Error</title>
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body { background: #020617; }
+        .error-wrap { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="error-wrap">
+        <!-- 1. ERROR STAT / HERO -->
+        <div class="reveal">
+            <h1 class="display-1 fw-bold text-accent mb-0">404</h1>
+            <h2 class="text-white mb-4 fw-bold">Geometric Inconsistency Detected</h2>
+            <p class="text-body mb-5 mx-auto" style="max-width: 600px;">The coordinate path you followed does not exist in our industrial manifold. Your STL request might be corrupted or outdated.</p>
+        </div>
+
+        <!-- 2. HELP CHECKLIST -->
+        <div class="row justify-content-center mb-5 reveal" style="max-width: 800px; transition-delay: 0.1s;">
+            <div class="col-md-6 text-start p-4 bg-card border border-light border-opacity-10 rounded-4 m-2">
+                <h6 class="text-white mb-3">2. Potential Causes:</h6>
+                <ul class="list-unstyled text-body small">
+                    <li class="mb-2"><i class="bi bi-x-circle text-danger me-2"></i> Broken URL mesh</li>
+                    <li class="mb-2"><i class="bi bi-x-circle text-danger me-2"></i> Legacy project removal</li>
+                    <li><i class="bi bi-x-circle text-danger me-2"></i> Manual coordinate entry error</li>
+                </ul>
+            </div>
+            <div class="col-md-6 text-start p-4 bg-card border border-light border-opacity-10 rounded-4 m-2">
+                <h6 class="text-white mb-3">3. Suggested Repairs:</h6>
+                <ul class="list-unstyled text-body small">
+                    <li class="mb-2"><i class="bi bi-check-circle text-accent me-2"></i> Recalibrate Home Link</li>
+                    <li class="mb-2"><i class="bi bi-check-circle text-accent me-2"></i> Review Pricing Index</li>
+                    <li><i class="bi bi-check-circle text-accent me-2"></i> Contact Base Ops</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4. SEARCH / REDIRECT UI -->
+        <div class="reveal" style="max-width: 500px; transition-delay: 0.2s;">
+            <p class="text-white opacity-75 small mb-4">4. Re-analyze site structure for valid nodes:</p>
+            <div class="input-group mb-5">
+                <input type="text" class="form-control" placeholder="Search industrial docs...">
+                <button class="btn btn-accent text-white px-4 fw-bold"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+
+        <!-- 5. SUPPORT CTA / RETURN BASE -->
+        <div class="reveal d-flex gap-3 justify-content-center flex-wrap" style="transition-delay: 0.3s;">
+            <a href="index.html" class="btn btn-accent text-white px-5 py-3 rounded-pill fw-bold">5. Return To Home Base</a>
+            <a href="contact.html" class="btn btn-outline-light px-5 py-3 rounded-pill fw-bold">Engineering Support</a>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

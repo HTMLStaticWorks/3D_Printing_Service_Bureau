@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | 3D Printing Service Bureau</title>
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-body">
+
+    <div class="dashboard-wrapper">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="d-flex align-items-center mb-5 px-3">
+                <i class="bi bi-box-seam-fill me-2 fs-3 text-accent"></i>
+                <span class="fw-bold text-uppercase fs-5 text-white">3D<span class="text-accent">BUREAU</span></span>
+            </div>
+            <nav class="sidebar-content">
+                <a href="user-dashboard.html" class="sidebar-link active"><i class="bi bi-grid-1x2"></i> Overview</a>
+                <a href="#" class="sidebar-link"><i class="bi bi-cloud-upload"></i> Upload 3D File</a>
+                <a href="pricing.html" class="sidebar-link"><i class="bi bi-calculator"></i> Instant Quote</a>
+                <a href="#" class="sidebar-link"><i class="bi bi-box-seam"></i> Track Orders</a>
+                <a href="#" class="sidebar-link"><i class="bi bi-clock-history"></i> Order History</a>
+                <hr class="border-white opacity-10 my-4">
+                <a href="#" class="sidebar-link"><i class="bi bi-person-gear"></i> Profile Settings</a>
+                <a href="#" class="sidebar-link"><i class="bi bi-bell"></i> Notifications <span class="badge bg-accent ms-auto rounded-pill">2</span></a>
+                <a href="login.html" class="sidebar-link mt-5 text-danger"><i class="bi bi-box-arrow-left"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- Header (Dashboard Internal) -->
+            <header class="d-flex justify-content-between align-items-center mb-5">
+                <div>
+                    <h2 class="text-white mb-1">Customer Overview</h2>
+                    <p class="text-body small mb-0">Welcome back, <span class="text-white fw-bold">Nolan Aerospace Corp</span></p>
+                </div>
+                <div class="d-flex gap-3 align-items-center">
+                    <button id="sidebarToggle" class="btn btn-dark d-lg-none"><i class="bi bi-list fs-3"></i></button>
+                    <div class="avatar bg-accent text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 45px; height: 45px;">NA</div>
+                </div>
+            </header>
+
+            <!-- DASHBOARD CARDS -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-3"><div class="card dashboard-card border-0"><h6 class="text-body small text-uppercase fw-bold mb-3">Active Prints</h6><div class="d-flex align-items-center"><h2 class="text-white mb-0 me-3">04</h2><span class="badge bg-success-subtle text-success">+1 today</span></div></div></div>
+                <div class="col-md-3"><div class="card dashboard-card border-0"><h6 class="text-body small text-uppercase fw-bold mb-3">Est. Dispatch</h6><div class="d-flex align-items-center"><h2 class="text-white mb-0 me-3">22h</h2><p class="small text-body mb-0">Batch #902</p></div></div></div>
+                <div class="col-md-3"><div class="card dashboard-card border-0"><h6 class="text-body small text-uppercase fw-bold mb-3">Total Spend</h6><div class="d-flex align-items-center"><h2 class="text-white mb-0 me-3">$4.2k</h2><p class="small text-body mb-0">FY2026</p></div></div></div>
+                <div class="col-md-3"><div class="card dashboard-card bg-accent border-0"><h6 class="text-white opacity-75 small text-uppercase fw-bold mb-3">Material Credits</h6><div class="d-flex align-items-center"><h2 class="text-white mb-0 me-3">85kg</h2><i class="bi bi-plus-circle text-white ms-auto fs-4 cursor-pointer"></i></div></div></div>
+            </div>
+
+            <!-- ANALYTICS & UPLOAD -->
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card dashboard-card h-100"><h5 class="text-white mb-4">Production Timeline</h5><div class="p-5 text-center opacity-25"><i class="bi bi-bar-chart-fill display-1 text-accent d-block mb-3"></i><p class="text-white">Active build plate visualization loading...</p></div></div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card dashboard-card h-100 bg-primary-opacity-10 border-accent">
+                        <h5 class="text-white mb-4">New Project Dropzone</h5>
+                        <div id="uploadDropzone" class="p-5 border-2 border-dashed border-accent border-opacity-25 rounded-4 text-center cursor-pointer hover-bg-dark" style="border: 2px dashed var(--accent);">
+                            <i class="bi bi-cloud-upload display-4 text-accent mb-3 d-block"></i>
+                            <h6 class="text-white">STL / OBJ / 3MF</h6>
+                            <p class="small text-body mb-0">Drag & drop or <span class="text-accent underline">browse</span> industrial files.</p>
+                            <input type="file" id="fileInput" class="d-none">
+                        </div>
+                        <div id="uploadStatus" class="mt-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. ORDER HISTORY TABLE -->
+            <div class="mt-5">
+                <h5 class="text-white mb-4">4. Recent Technical Dispatches</h5>
+                <div class="table-responsive bg-card rounded-4 p-4 border border-light border-opacity-10">
+                    <table class="table table-dark table-hover align-middle mb-0">
+                        <thead><tr><th>Job ID</th><th>Parts</th><th>Material</th><th>Status</th><th>Est. Arrival</th></tr></thead>
+                        <tbody>
+                            <tr><td>#90102</td><td>4x Manifold</td><td>SLS Nylon</td><td><span class="badge bg-warning text-dark">In Build</span></td><td>Mar 25, 2026</td></tr>
+                            <tr><td>#89945</td><td>1x Turbine</td><td>DMLS Steel</td><td><span class="badge bg-success">QC Passed</span></td><td>Mar 24, 2026</td></tr>
+                            <tr><td>#89102</td><td>12x Bracket</td><td>FDM Onyx</td><td><span class="badge bg-info text-dark">Shipped</span></td><td>Completed</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 5. ACCOUNT SUPPORT & KNOWLEDGE BASE -->
+            <div class="row g-4 mt-5">
+                <div class="col-12">
+                    <div class="card dashboard-card bg-primary-opacity-10 border-light border-opacity-10">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-headset text-accent fs-2 me-4"></i>
+                            <div>
+                                <h5 class="text-white mb-1">5. Dedicated Engineering Support</h5>
+                                <p class="small text-body mb-0">Need help with your 3D geometry? Our engineers are available 24/7 for technical consultation.</p>
+                            </div>
+                            <button class="btn btn-outline-light ms-auto fw-bold px-4">Open Ticket</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

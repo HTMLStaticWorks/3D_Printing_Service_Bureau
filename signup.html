@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up | Precision 3D</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            min-height: 100vh;
+            margin: 0;
+            overflow-y: auto;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px; /* Buffer for scrolling */
+        }
+        .auth-card {
+            background-color: var(--body-bg);
+            color: var(--body-text);
+            padding: 30px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto; /* Proper centering within flex parent */
+        }
+        .brand-link {
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: var(--secondary) !important;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .auth-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2px;
+        }
+        .auth-header p {
+            color: var(--secondary);
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+        .form-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+        .form-control {
+            height: 42px;
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            border: 0 !important;
+            background-color: rgba(128, 128, 128, 0.1) !important;
+        }
+        .social-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 12px 0 8px;
+            color: #ccc;
+        }
+        .social-divider::before, .social-divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #eee;
+        }
+        .social-divider span {
+            padding: 0 10px;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+        .social-text {
+            text-align: center;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+            color: var(--body-text);
+            opacity: 0.6;
+        }
+        .social-icons-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 5px;
+        }
+        .btn-social-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        .btn-social-circle:hover {
+            transform: translateY(-3px);
+            border-color: var(--secondary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .icon-google { color: #DB4437; }
+        .icon-facebook { color: #1877F2; }
+
+        @media (max-width: 1024px) {
+            .auth-card {
+                padding: 25px;
+                max-width: 380px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .auth-card {
+                padding: 20px;
+                max-width: 360px;
+            }
+            .brand-link { margin-bottom: 10px; }
+            .auth-header { margin-bottom: 12px; }
+            .auth-header h2 { font-size: 1.3rem; }
+        }
+
+        @media (max-width: 360px) {
+            body { padding: 15px 10px; }
+            .auth-card {
+                padding: 15px;
+                max-width: 100%;
+            }
+            .brand-link { font-size: 1.1rem; margin-bottom: 8px; }
+            .auth-header h2 { font-size: 1.2rem; }
+            .form-control { height: 38px; font-size: 0.8rem; }
+            .form-label { font-size: 0.7rem; }
+            .social-divider { margin: 8px 0 5px; }
+            .btn-social-circle { width: 35px; height: 35px; font-size: 1rem; }
+            .text-center.mt-2 { margin-top: 1rem !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card fade-in appear">
+        <a class="brand-link" href="index.html">
+            <i class="fas fa-cube me-2"></i>Precision 3D
+        </a>
+        
+        <div class="auth-header">
+            <h2>Create account</h2>
+            <p>Join the precision team</p>
+        </div>
+
+        <form>
+            <div class="mb-2">
+                <label class="form-label">First name</label>
+                <input type="text" class="form-control" placeholder="John" required>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">Last name</label>
+                <input type="text" class="form-control" placeholder="Doe" required>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">Email address</label>
+                <input type="email" class="form-control" placeholder="john@company.com" required>
+            </div>
+            
+            <div class="mb-2">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" placeholder="••••••••" required>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">Confirm password</label>
+                <input type="password" class="form-control" placeholder="••••••••" required>
+            </div>
+
+            <div class="mb-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="termsBox" required>
+                    <label class="form-check-label small" for="termsBox" style="font-size: 0.7rem;">
+                        I agree to <a href="#" class="text-secondary text-decoration-none fw-bold">Terms & conditions</a>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2 mb-2 rounded-3 shadow-sm fw-bold" style="height: 42px; font-size: 0.9rem;">Create account</button>
+
+            <div class="social-divider">
+                <span>Or</span>
+            </div>
+
+            <div class="social-text">Continue with</div>
+
+            <div class="social-icons-wrapper">
+                <button type="button" class="btn-social-circle">
+                    <i class="fab fa-google icon-google"></i>
+                </button>
+                <button type="button" class="btn-social-circle">
+                    <i class="fab fa-facebook icon-facebook"></i>
+                </button>
+            </div>
+
+            <div class="text-center mt-2">
+                <p class="small text-secondary mb-0" style="font-size: 0.75rem;">Already have an account? <a href="login.html" class="text-secondary fw-bold">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

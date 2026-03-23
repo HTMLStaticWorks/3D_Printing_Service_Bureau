@@ -1,0 +1,12 @@
+{
+  "name": "3d-printing-service-bureau",
+  "version": "1.0.0",
+  "description": "Professional 3D Printing Service Bureau Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx browser-sync start --server --files '*.html, assets/css/*.css, assets/js/*.js'"
+  },
+  "keywords": [],
+  "author": "Antigravity",
+  "license": "ISC"
+}

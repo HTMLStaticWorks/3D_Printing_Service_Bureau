@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Precision 3D Printing</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-logo-container" href="index.html">
+                <i class="fas fa-cube brand-logo-icon"></i>
+                <span class="brand-name">PRECISION 3D</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title brand-name fs-4" id="offcanvasNavbarLabel">PRECISION 3D</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="home2.html">Home 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dashboard
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="dashboardDropdown">
+                                <li><a class="dropdown-item" href="dashboard-admin.html">Admin Dashboard</a></li>
+                                <li><a class="dropdown-item" href="dashboard.html">User Dashboard</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center mt-4 mt-lg-0 gap-2 ms-lg-3">
+                        <a href="login.html" class="btn btn-outline-primary header-btn">Login</a>
+                        <a href="signup.html" class="btn btn-primary header-btn">Sign Up</a>
+                        <button class="rtl-toggle" id="rtl-toggle">RTL</button>
+                        <button class="theme-switch ms-2" id="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Services Hero -->
+    <header class="hero-section" style="background-image: url('assets/images/sla.png'); height: 60vh;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center mx-auto">
+            <div class="fade-in">
+                <h1 class="hero-title">Manufacturing Capabilities</h1>
+                <p class="lead">Industrial additive manufacturing solutions for every phase of product development.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 2: Technology Cards -->
+    <section class="technologies-grid">
+        <div class="container">
+            <div class="section-title fade-in text-center">
+                <span class="section-tag">Core Tech</span>
+                <h2>Our Printing Technologies</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="custom-card text-center">
+                        <img src="assets/images/fdm.png" class="card-img-top" alt="FDM">
+                        <h3>FDM</h3>
+                        <p class="text-secondary small">Fused Deposition Modeling for durable prototypes and functional jigs/fixtures.</p>
+                        <ul class="list-unstyled text-start small mb-4">
+                            <li><i class="fas fa-check text-secondary me-2"></i> Low Cost</li>
+                            <li><i class="fas fa-check text-secondary me-2"></i> Fast Lead Time</li>
+                        </ul>
+                        <a href="services.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="custom-card text-center">
+                        <img src="assets/images/sla.png" class="card-img-top" alt="SLA">
+                        <h3>SLA</h3>
+                        <p class="text-secondary small">Stereolithography for high-resolution parts with smooth surface finishes and complex details.</p>
+                        <ul class="list-unstyled text-start small mb-4">
+                            <li><i class="fas fa-check text-secondary me-2"></i> High Accuracy</li>
+                            <li><i class="fas fa-check text-secondary me-2"></i> Smooth Surface</li>
+                        </ul>
+                        <a href="services.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="custom-card text-center">
+                        <img src="assets/images/sls.png" class="card-img-top" alt="SLS">
+                        <h3>SLS</h3>
+                        <p class="text-secondary small">Selective Laser Sintering for production-grade nylon parts without support structures.</p>
+                        <ul class="list-unstyled text-start small mb-4">
+                            <li><i class="fas fa-check text-secondary me-2"></i> Design Freedom</li>
+                            <li><i class="fas fa-check text-secondary me-2"></i> Batch Production</li>
+                        </ul>
+                        <a href="services.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="custom-card text-center">
+                        <img src="assets/images/metal.png" class="card-img-top" alt="Metal">
+                        <h3>Metal DMLS</h3>
+                        <p class="text-secondary small">Direct Metal Laser Sintering for high-strength, functional industrial metal components.</p>
+                        <ul class="list-unstyled text-start small mb-4">
+                            <li><i class="fas fa-check text-secondary me-2"></i> Metal Strength</li>
+                            <li><i class="fas fa-check text-secondary me-2"></i> Intricate Internals</li>
+                        </ul>
+                        <a href="services.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Post-Processing -->
+    <section class="post-processing bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 fade-in">
+                    <span class="section-tag">Finishing</span>
+                    <h2 class="mb-4">Premium Surface Finishes</h2>
+                    <p class="mb-5">We provide professional post-processing services to ensure your parts meet both aesthetic and functional requirements.</p>
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-tint text-secondary me-3"></i>
+                                <span>Vapor Smoothing</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-brush text-secondary me-3"></i>
+                                <span>Hand Polishing</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-palette text-secondary me-3"></i>
+                                <span>Custom Painting</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-shield-alt text-secondary me-3"></i>
+                                <span>UV Coating</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=800&auto=format" class="img-fluid rounded-4 shadow" alt="Finishing">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Specifications Tab -->
+    <section class="industry-standards">
+        <div class="container text-center">
+            <div class="section-title fade-in">
+                <span class="section-tag">Reliability</span>
+                <h2>Our Industrial Standards</h2>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-3 fade-in">
+                    <div class="p-4 border border-secondary border-opacity-25 rounded-4 h-100">
+                        <h4 class="text-secondary">ISO 9001</h4>
+                        <p class="small opacity-75">Certified quality management systems for all manufacturing processes.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="p-4 border border-secondary border-opacity-25 rounded-4 h-100">
+                        <h4 class="text-secondary">AS9100D</h4>
+                        <p class="small opacity-75">Compliance for aerospace and defense manufacturing requirements.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="p-4 border border-secondary border-opacity-25 rounded-4 h-100">
+                        <h4 class="text-secondary">ITAR</h4>
+                        <p class="small opacity-75">Registered for defense-related manufacturing projects in the USA.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="p-4 border border-secondary border-opacity-25 rounded-4 h-100">
+                        <h4 class="text-secondary">RoHS</h4>
+                        <p class="small opacity-75">Lead-free and environmentally friendly material options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Quote CTA -->
+    <section class="services-cta">
+        <div class="container">
+            <div class="custom-card p-5 rounded-5 text-center fade-in shadow-lg" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); border: none;">
+                <h2 class="text-white mb-4">Start Your Manufacturing Project</h2>
+                <p class="text-white mb-5 opacity-80">Upload your STL/STEP files for an instant quote and manufacturability analysis.</p>
+                <a href="dashboard.html" class="btn btn-light btn-lg px-5">Get Web Quote Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <a class="footer-logo brand-logo-container" href="index.html">
+                        <i class="fas fa-cube brand-logo-icon"></i>
+                        <span class="brand-name">PRECISION 3D</span>
+                    </a>
+                    <p class="text-secondary">Next-generation 3D printing bureau providing industrial manufacturing solutions across the globe.</p>
+                    <a href="mailto:info@precision3d.com" class="footer-email">info@precision3d.com</a>
+                    <div class="footer-social-icons">
+                        <a href="#" class="footer-social-icon instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon x-twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">FDM Printing</a></li>
+                        <li><a href="#">SLA Lithography</a></li>
+                        <li><a href="#">SLS Powder Prints</a></li>
+                        <li><a href="#">Metal Manufacturing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="text-secondary">Subscribe to get the latest manufacturing insights.</p>
+                    <form class="mt-4">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row align-items-center footer-bottom">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2026 Precision 3D. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed by <span class="text-secondary">Senior Frontend Developer</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

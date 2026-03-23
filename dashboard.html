@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Precision 3D</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .dashboard-content { background-color: var(--body-bg); color: var(--body-text); min-height: 100vh; transition: var(--transition); }
+        .quote-result-card { border-left: 5px solid var(--secondary); display: none; }
+        .order-status-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .status-processing { background-color: rgba(255, 107, 53, 0.1); color: var(--secondary); }
+        .status-completed { background-color: rgba(46, 204, 113, 0.1); color: #2ecc71; }
+        .status-shipping { background-color: rgba(52, 152, 219, 0.1); color: #3498db; }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header mb-5">
+                <a class="brand-logo-container" href="index.html">
+                    <i class="fas fa-cube brand-logo-icon"></i>
+                    <span class="brand-name">PRECISION 3D</span>
+                </a>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <div class="sidebar-item active" data-target="overview">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="sidebar-item" data-target="upload">
+                    <i class="fas fa-upload"></i>
+                    <span>Upload File</span>
+                </div>
+                <div class="sidebar-item" data-target="orders">
+                    <i class="fas fa-box"></i>
+                    <span>My Orders</span>
+                </div>
+                <div class="sidebar-item" data-target="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </div>
+                <div class="mt-auto pt-5">
+                    <a href="login.html" class="sidebar-item text-white-50 text-decoration-none">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content dashboard-content overflow-auto h-100vh">
+            <!-- Header Top -->
+            <header class="d-flex justify-content-between align-items-center mb-5">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-secondary d-lg-none me-3" id="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2 class="mb-0 h4">Project Dashboard</h2>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="me-3 d-none d-md-inline">Welcome, <strong>John Davidson</strong></span>
+                    <div class="dropdown me-3">
+                        <img src="https://ui-avatars.com/api/?name=John+D&background=FF6B35&color=fff" class="rounded-circle cursor-pointer" width="40" data-bs-toggle="dropdown" alt="User">
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Billing</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html">Sign Out</a></li>
+                        </ul>
+                    </div>
+                    <button class="theme-switch" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Sections -->
+            
+            <!-- Overview Section -->
+            <div id="section-overview" class="dashboard-section">
+                <div class="row g-4 mb-5">
+                    <div class="col-md-3">
+                        <div class="custom-card border-0 shadow-sm p-4">
+                            <span class="text-secondary small fw-bold">Active Orders</span>
+                            <h3 class="mb-0 mt-2">12</h3>
+                            <div class="text-success small mt-2">+2 since yesterday</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="custom-card border-0 shadow-sm p-4">
+                            <span class="text-secondary small fw-bold">Total Budget Spent</span>
+                            <h3 class="mb-0 mt-2">$4,250</h3>
+                            <div class="text-secondary small mt-2">FY 2026 Quarter 1</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="custom-card border-0 shadow-sm p-4">
+                            <span class="text-secondary small fw-bold">Pending Quotes</span>
+                            <h3 class="mb-0 mt-2">3</h3>
+                            <div class="text-warning small mt-2">Action required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="custom-card border-0 shadow-sm p-4">
+                            <span class="text-secondary small fw-bold">Finished Parts</span>
+                            <h3 class="mb-0 mt-2">48</h3>
+                            <div class="text-success small mt-2">+12 this month</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="custom-card p-4">
+                            <h5 class="mb-4">Recent Projects</h5>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead class="text-secondary small text-uppercase">
+                                        <tr>
+                                            <th>Project Name</th>
+                                            <th>Material</th>
+                                            <th>Status</th>
+                                            <th>Delivery</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="small">
+                                        <tr>
+                                            <td><i class="fas fa-file-invoice me-2"></i> Turbine_Blade_V2.stl</td>
+                                            <td>Titanium Grade 5</td>
+                                            <td><span class="order-status-badge status-processing">Processing</span></td>
+                                            <td>Mar 25, 2026</td>
+                                            <td><button class="btn btn-sm btn-link"><i class="fas fa-ellipsis-h"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-file-invoice me-2"></i> Housing_Gasket.step</td>
+                                            <td>SLA Rigid Resin</td>
+                                            <td><span class="order-status-badge status-shipping">Shipping</span></td>
+                                            <td>Mar 24, 2026</td>
+                                            <td><button class="btn btn-sm btn-link"><i class="fas fa-ellipsis-h"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-file-invoice me-2"></i> Mounting_Bracket.stl</td>
+                                            <td>SLS Nylon 12</td>
+                                            <td><span class="order-status-badge status-completed">Completed</span></td>
+                                            <td>Mar 20, 2026</td>
+                                            <td><button class="btn btn-sm btn-link"><i class="fas fa-ellipsis-h"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="custom-card p-4 h-100">
+                            <h5 class="mb-4">Quick Quote</h5>
+                            <p class="small text-secondary">Upload a new CAD file to get an instant pricing estimate.</p>
+                            <div class="border border-dashed p-5 text-center rounded-4 cursor-pointer mb-4" id="upload-trigger">
+                                <i class="fas fa-cloud-upload-alt fa-3x text-secondary mb-3"></i>
+                                <p class="mb-0 small fw-bold">Drag & Drop .STL or .STEP</p>
+                            </div>
+                            <button class="btn btn-primary w-100" id="btn-upload-direct">New Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div id="section-upload" class="dashboard-section d-none">
+                <div class="row g-4 d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="custom-card p-5">
+                            <h3 class="mb-4">Instant Quoting System</h3>
+                            <div class="mb-4">
+                                <label class="form-label">Select Material Technology</label>
+                                <select class="form-select border-0 shadow-sm p-3 bg-light" id="quote-material">
+                                    <option value="fdm">FDM - PLA/ABS ($)</option>
+                                    <option value="sla">SLA - High Detail Resin ($$)</option>
+                                    <option value="sls">SLS - Production Nylon ($$$)</option>
+                                    <option value="metal">DMLS - Titanium/Steel ($$$$)</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Quantity</label>
+                                <input type="number" class="form-control p-3 border-0 bg-light" id="quote-qty" value="1" min="1">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Upload 3D Model</label>
+                                <div class="p-5 border border-dashed rounded-4 text-center bg-light" style="border-style: dashed !important; border-width: 2px !important;">
+                                    <i class="fas fa-file-medical fa-3x text-secondary mb-3"></i>
+                                    <p class="mb-0">Click to upload your model</p>
+                                    <input type="file" class="d-none" id="file-input">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-lg w-100 py-3 mt-4" id="calculate-quote">Get Instant Price</button>
+                            
+                            <!-- Quote Result (Hidden) -->
+                            <div class="quote-result-card p-4 mt-5 bg-dark text-white rounded-4 shadow-lg text-center" id="quote-result">
+                                <h2 class="text-secondary">$ <span id="quote-price">0.00</span></h2>
+                                <p class="mb-3 opacity-75">Estimated Production Price (Excluding Shipping)</p>
+                                <button class="btn btn-outline-light btn-sm mt-3">Confirm & Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Section -->
+            <div id="section-orders" class="dashboard-section d-none">
+                <div class="custom-card p-5">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="mb-0">Full Order History</h3>
+                        <div class="d-flex g-2">
+                            <button class="btn btn-outline-secondary btn-sm me-2">Export CSV</button>
+                            <input type="text" class="form-control form-control-sm" style="width: 200px;" placeholder="Search orders...">
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="text-secondary small fw-bold">
+                                <tr>
+                                    <th>#Order ID</th>
+                                    <th>Date</th>
+                                    <th>Project</th>
+                                    <th>Material</th>
+                                    <th>Total Price</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr>
+                                    <td>#ORD-7721</td>
+                                    <td>Jan 12, 2026</td>
+                                    <td>Drone_Wing_Left.stl</td>
+                                    <td>Carbon Fiber FDM</td>
+                                    <td>$245.00</td>
+                                    <td><button class="btn btn-sm btn-outline-primary">Invoice</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-7650</td>
+                                    <td>Dec 28, 2025</td>
+                                    <td>Camera_Mount_Gimbal</td>
+                                    <td>Nylon SLS</td>
+                                    <td>$120.00</td>
+                                    <td><button class="btn btn-sm btn-outline-primary">Invoice</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Section -->
+            <div id="section-settings" class="dashboard-section d-none">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="custom-card p-5">
+                            <h4 class="mb-4">Profile Settings</h4>
+                            <div class="mb-3">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" value="John Davidson">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Company</label>
+                                <input type="text" class="form-control" value="Davidson Aerospace">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" value="john@davidsonaero.com">
+                            </div>
+                            <button class="btn btn-primary mt-4">Save Changes</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="custom-card p-5">
+                            <h4 class="mb-4">Billing & Address</h4>
+                            <p class="text-secondary small">Default shipping and billing across your projects.</p>
+                            <div class="mb-3">
+                                <label class="form-label">Default Shipping Method</label>
+                                <select class="form-select">
+                                    <option>Standard (3-5 days)</option>
+                                    <option selected>Express (Next Day)</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Global Discount Code</label>
+                                <input type="text" class="form-control" placeholder="AERO2026">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
