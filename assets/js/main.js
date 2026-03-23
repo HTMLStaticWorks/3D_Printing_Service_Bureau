@@ -150,6 +150,37 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Mobile Menu Toggle & Scroll Lock
+    const navbarCollapse = document.getElementById('navbarContent');
+    if (navbarCollapse) {
+        navbarCollapse.addEventListener('show.bs.collapse', () => {
+            document.body.classList.add('menu-open');
+        });
+        navbarCollapse.addEventListener('hide.bs.collapse', () => {
+            document.body.classList.remove('menu-open');
+        });
+    }
+
+    // Close mobile menu on link click
+    const mobileNavLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle), .dropdown-item');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse && window.innerWidth < 992) {
+                bsCollapse.hide();
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const isNavbar = e.target.closest('.navbar');
+        if (!isNavbar && navbarCollapse.classList.contains('show') && window.innerWidth < 992) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) bsCollapse.hide();
+        }
+    });
 });
 
 // Extra Styles for back to top button added via JS or CSS

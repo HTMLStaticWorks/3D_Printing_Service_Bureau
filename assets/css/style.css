@@ -92,6 +92,61 @@ section {
     padding: 100px 0;
 }
 
+/* Global Dark Mode Visibility Fixes */
+body.dark-mode .text-secondary,
+body.dark-mode .text-body,
+body.dark-mode p.text-secondary {
+    color: #94a3b8 !important; /* Lighter slate for better contrast */
+}
+
+body.dark-mode .bg-light {
+    background-color: var(--card-bg) !important;
+}
+
+body.dark-mode .bg-light-subtle {
+    background-color: rgba(30, 41, 59, 0.5) !important;
+}
+
+/* Table Dark Mode Support */
+body.dark-mode .table {
+    color: var(--body-text) !important;
+}
+
+body.dark-mode .table thead th {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--body-text) !important;
+    border-bottom-color: var(--border-color) !important;
+}
+
+body.dark-mode .table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    color: var(--body-text) !important;
+}
+
+body.dark-mode .table td, body.dark-mode .table th {
+    border-color: var(--border-color);
+}
+
+body.dark-mode .table-active {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--body-text) !important;
+}
+
+/* Card & Link Dark Mode Opacity */
+body.dark-mode .opacity-75, 
+body.dark-mode .opacity-80,
+body.dark-mode .text-white-50 {
+    opacity: 0.8 !important;
+}
+
+body.dark-mode a.text-secondary:hover {
+    color: var(--secondary) !important;
+}
+
+body.dark-mode .list-unstyled li {
+    color: var(--body-text);
+}
+
 /* Header & Navbar */
 .navbar {
     background-color: var(--header-bg);
@@ -122,11 +177,21 @@ section {
 .brand-name {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: var(--heading-color) !important;
     line-height: 1;
+}
+
+@media (max-width: 380px) {
+    .brand-name {
+        font-size: 1rem;
+    }
+    .brand-logo-icon {
+        font-size: 20px;
+        margin-right: 8px;
+    }
 }
 
 .navbar-brand {
@@ -142,17 +207,154 @@ section {
     transition: var(--transition);
 }
 
-/* Offcanvas Theme Support */
-.offcanvas {
-    background-color: var(--body-bg) !important;
+/* Mobile Navigation & Theme Support */
+.custom-toggler {
+    font-size: 1.5rem;
+    color: var(--body-text) !important;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.custom-toggler i {
+    transition: transform 0.3s ease;
+}
+
+.custom-toggler.collapsed i {
+    transform: rotate(0deg);
+}
+
+.custom-toggler:not(.collapsed) i {
+    transform: rotate(90deg);
+}
+
+.custom-toggler:not(.collapsed) i::before {
+    content: "\f00d"; /* Change to X when open */
+}
+
+/* Fullscreen Mobile Navigation & Scroll Lock */
+body.menu-open {
+    overflow: hidden !important;
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--header-bg);
+        backdrop-filter: blur(15px);
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        padding: 40px 20px;
+        overflow-y: auto !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-top: 1px solid var(--border-color);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+    }
+
+    .navbar-collapse.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .nav-item {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .nav-link {
+        font-size: 1.25rem;
+        padding: 12px 15px !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-radius: 8px;
+        gap: 8px;
+    }
+
+    .navbar-nav .dropdown-toggle::after {
+        margin-left: 0 !important;
+    }
+
+    .nav-auth-buttons {
+        width: 100%;
+        display: flex !important;
+        flex-direction: row !important; /* Force side by side */
+        justify-content: center;
+        align-items: center;
+        gap: 12px !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .nav-auth-buttons .header-btn {
+        flex: 1;
+        max-width: 160px;
+        margin: 0 !important;
+        white-space: nowrap;
+        height: 48px !important;
+        font-size: 1rem !important;
+    }
+
+    .nav-auth-buttons .rtl-toggle {
+        width: auto !important;
+        min-width: 50px;
+        height: 48px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .dropdown-menu {
+        position: static !important;
+        width: 100%;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        display: none;
+    }
+
+    .dropdown-menu.show {
+        display: block !important;
+    }
+
+    .dropdown-item {
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 12px !important;
+    }
+}
+
+body.dark-mode .navbar-collapse {
+    background-color: rgba(15, 23, 42, 0.98);
+}
+
+body.dark-mode .custom-toggler {
     color: var(--body-text) !important;
 }
-body.dark-mode .btn-close,
-body.dark-mode .navbar-toggler-icon {
-    filter: invert(1) grayscale(100%) brightness(200%);
-}
-body.dark-mode .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5);
+
+body.dark-mode .custom-toggler {
+    color: var(--body-text) !important;
 }
 
 .nav-link:not(.dropdown-toggle)::after {
@@ -257,13 +459,36 @@ body.dark-mode .hero-section .btn-outline-light {
     justify-content: center !important;
     text-align: center !important;
     transition: var(--transition);
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100%;
+}
+
+.btn-primary, .btn-secondary, .btn-outline-primary, .btn-outline-light {
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .btn-primary, .btn-secondary, .btn-outline-primary, .btn-outline-light {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn-primary, .btn-secondary, .btn-outline-primary, .btn-outline-light {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
+    }
 }
 
 .btn-primary {
     background-color: var(--secondary);
     border-color: var(--secondary);
-    padding: 0.8rem 2rem;
-    font-weight: 600;
     transition: var(--transition);
 }
 
@@ -771,43 +996,72 @@ body.rtl-mode .footer-social-icons {
     }
 }
 
-/* persistent Mini-Sidebar for Admin Dashboard on Mobile/Tablet */
+/* Universal Dashboard Sidebar Fixes */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 27, 42, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 @media (max-width: 991px) {
-    body.admin-dashboard .sidebar {
-        transform: none !important;
-        width: 70px !important;
-        padding: 20px 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        overflow-x: hidden !important;
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: none;
+        width: 280px !important;
+        background-color: var(--sidebar-bg) !important;
+        padding: 30px !important;
+        display: block !important;
     }
-    body.admin-dashboard .sidebar .brand-name,
-    body.admin-dashboard .sidebar .sidebar-item span {
-        display: none !important;
+    
+    .sidebar.active {
+        transform: translateX(0);
+        box-shadow: 20px 0 50px rgba(0,0,0,0.3);
     }
-    body.admin-dashboard .sidebar .sidebar-header {
-        margin-bottom: 20px !important;
-        text-align: center !important;
-    }
-    body.admin-dashboard .sidebar .sidebar-item {
-        padding: 12px !important;
-        justify-content: center !important;
-        width: 45px !important;
-        height: 45px !important;
-        margin: 0 auto 15px !important;
-        border-radius: 12px !important;
-    }
-    body.admin-dashboard .sidebar-item i {
-        margin-right: 0 !important;
-        font-size: 1.4rem !important;
-    }
-    body.admin-dashboard .main-content {
-        margin-left: 70px !important;
+
+    .main-content {
+        margin-left: 0 !important;
         padding: 20px !important;
     }
-    body.admin-dashboard #sidebar-toggle {
-        display: none !important;
+
+    .sidebar .brand-name,
+    .sidebar .sidebar-item span {
+        display: inline !important; /* Force visibility in offcanvas */
+    }
+
+    .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px !important;
+    }
+}
+
+/* Sidebar Close Button for Mobile */
+.sidebar-close {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--body-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .sidebar-close {
+        display: block;
     }
 }
 
@@ -1080,4 +1334,11 @@ body.dark-mode .table th {
     background-color: transparent !important;
     color: #e2e8f0 !important;
     border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Hide User Profile Dropdown on Mobile/Tablet */
+@media (max-width: 991px) {
+    .main-content header .dropdown {
+        display: none !important;
+    }
 }

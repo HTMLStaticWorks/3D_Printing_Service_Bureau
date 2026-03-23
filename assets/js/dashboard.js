@@ -30,18 +30,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Close sidebar on mobile after click
             if (window.innerWidth < 992) {
-                document.getElementById('sidebar').classList.remove('active');
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.querySelector('.sidebar-overlay'); // Ensure overlay is defined or accessible
+                if (sidebar) sidebar.classList.remove('active');
+                if (overlay) overlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
             }
         });
     });
 
-    // Sidebar Toggle for Mobile
+    // Sidebar Toggle for Mobile (Offcanvas Style)
     const toggleBtn = document.getElementById('sidebar-toggle');
     const sidebar = document.getElementById('sidebar');
+    const wrapper = document.querySelector('.dashboard-wrapper');
+    
+    // Create Overlay if not exists
+    let overlay = document.querySelector('.sidebar-overlay');
+    if (!overlay && wrapper) {
+        overlay = document.createElement('div');
+        overlay.className = 'sidebar-overlay';
+        wrapper.appendChild(overlay);
+    }
 
-    if (toggleBtn) {
+    // Add Close Button to Sidebar Header if not exists
+    const sidebarHeader = document.querySelector('.sidebar-header');
+    if (sidebarHeader && !sidebarHeader.querySelector('.sidebar-close')) {
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'sidebar-close';
+        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+        sidebarHeader.appendChild(closeBtn);
+        
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    }
+
+    if (toggleBtn && sidebar && overlay) {
         toggleBtn.addEventListener('click', () => {
             sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
         });
     }
 
