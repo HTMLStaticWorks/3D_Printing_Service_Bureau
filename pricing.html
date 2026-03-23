@@ -14,7 +14,7 @@
 <body data-theme="dark">
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand brand-logo-container" href="index.html">
                 <i class="fas fa-cube brand-logo-icon"></i>
@@ -65,7 +65,7 @@
                         <a href="login.html" class="btn btn-outline-primary header-btn">Login</a>
                         <a href="signup.html" class="btn btn-primary header-btn">Sign Up</a>
                         <button class="rtl-toggle" id="rtl-toggle">RTL</button>
-                        <button class="theme-switch ms-2" id="theme-toggle">
+                        <button class="theme-switch" id="theme-toggle">
                             <i class="fas fa-moon"></i>
                         </button>
                     </div>
@@ -75,10 +75,11 @@
     </nav>
 
     <!-- Section 1: Pricing Hero -->
-    <header class="page-hero pricing-section text-center py-5 mt-5">
-        <div class="container py-5">
-            <h1 class="display-4 fw-bold mb-3">Transparent <span class="text-secondary">Industrial</span> Quotes</h1>
-            <p class="lead mx-auto" style="max-width: 700px;">Scale-ready pricing for prototyping and high-volume additive manufacturing.</p>
+    <header class="page-hero pricing-section text-center position-relative" style="background-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; padding: 120px 0;">
+        <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 27, 42, 0.85);"></div>
+        <div class="container py-5 position-relative" style="z-index: 2;">
+            <h1 class="display-4 fw-bold mb-3" style="color: #ffffff !important;">Transparent <span class="text-secondary">Industrial</span> Quotes</h1>
+            <p class="lead mx-auto" style="max-width: 700px; color: rgba(255, 255, 255, 0.8) !important;">Scale-ready pricing for prototyping and high-volume additive manufacturing.</p>
         </div>
     </header>
 
@@ -86,47 +87,47 @@
     <section class="py-5 bg-light-subtle">
         <div class="container py-5">
             <div class="row g-4 justify-content-center">
-                <div class="col-lg-4">
-                    <div class="custom-card p-4 h-100 text-center">
-                        <h4 class="mb-3">Standard Prototyping</h4>
+                <div class="col-md-6 col-xl-4">
+                    <div class="custom-card p-4 h-100 text-center d-flex flex-column">
+                        <h4 class="mb-3 mt-3">Standard Prototyping</h4>
                         <p class="text-secondary small mb-4">Ideal for visual models and basic fit tests.</p>
                         <h2 class="mb-4 text-primary">$45<small class="fs-6 text-secondary">/unit starting</small></h2>
-                        <ul class="list-unstyled text-start mb-5 small">
+                        <ul class="list-unstyled text-start mb-5 small flex-grow-1">
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> FDM Technology</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 48-72 Hour Delivery</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Standard Tolerance (±0.2mm)</li>
                             <li class="mb-2 text-secondary"><i class="fas fa-times me-2"></i> Metal Printing</li>
                         </ul>
-                        <a href="dashboard.html" class="btn btn-outline-primary w-100">Get Standard Quote</a>
+                        <a href="dashboard.html" class="btn btn-outline-primary w-100 mt-auto">Get Standard Quote</a>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="custom-card p-4 h-100 text-center border-secondary shadow-lg">
-                        <span class="badge bg-secondary mb-3">MOST POPULAR</span>
-                        <h4 class="mb-3">Professional Industrial</h4>
+                <div class="col-md-6 col-xl-4">
+                    <div class="custom-card p-4 h-100 text-center border-secondary shadow-lg position-relative d-flex flex-column">
+                        <span class="badge bg-secondary position-absolute start-50 translate-middle-x" style="top: -12px;">MOST POPULAR</span>
+                        <h4 class="mb-3 mt-3">Professional Industrial</h4>
                         <p class="text-secondary small mb-4">High-performance resins and engineering polymers.</p>
                         <h2 class="mb-4 text-primary">$120<small class="fs-6 text-secondary">/unit starting</small></h2>
-                        <ul class="list-unstyled text-start mb-5 small">
+                        <ul class="list-unstyled text-start mb-5 small flex-grow-1">
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> SLA & SLS Technology</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 24-48 Hour Express Delivery</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> High Tolerance (±0.05mm)</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Full QC Compliance Report</li>
                         </ul>
-                        <a href="dashboard.html" class="btn btn-primary w-100 shadow">Start Professional Job</a>
+                        <a href="dashboard.html" class="btn btn-primary w-100 shadow mt-auto">Start Professional Job</a>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="custom-card p-4 h-100 text-center">
-                        <h4 class="mb-3">Advanced Materials</h4>
+                <div class="col-md-6 col-xl-4">
+                    <div class="custom-card p-4 h-100 text-center d-flex flex-column">
+                        <h4 class="mb-3 mt-3">Advanced Materials</h4>
                         <p class="text-secondary small mb-4">Aerospace-grade metals and medical bio-polymers.</p>
                         <h2 class="mb-4 text-primary">Custom<small class="fs-6 text-secondary">/project based</small></h2>
-                        <ul class="list-unstyled text-start mb-5 small">
+                        <ul class="list-unstyled text-start mb-5 small flex-grow-1">
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> DMLS Metal Printing</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> AS9100 Certified Quality</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Post-Processing & CNC</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Non-Disclosure Agreement</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-outline-primary w-100">Contact Engineering</a>
+                        <a href="contact.html" class="btn btn-outline-primary w-100 mt-auto">Contact Engineering</a>
                     </div>
                 </div>
             </div>
@@ -137,43 +138,45 @@
     <section class="py-5 pricing-section">
         <div class="container py-5">
             <h2 class="text-center mb-5">Batch Production <span class="text-secondary">Discounts</span></h2>
-            <div class="table-responsive">
-                <table class="table table-hover align-middle">
-                    <thead>
-                        <tr class="text-secondary small">
-                            <th>Quantity Range</th>
-                            <th>Discount</th>
-                            <th>Lead Time</th>
-                            <th>Support</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1 - 10 Units</td>
-                            <td>0%</td>
-                            <td>48 Hours</td>
-                            <td>Self-Service Portal</td>
-                        </tr>
-                        <tr>
-                            <td>11 - 50 Units</td>
-                            <td>15% OFF</td>
-                            <td>4-5 Days</td>
-                            <td>Email Support</td>
-                        </tr>
-                        <tr>
-                            <td>51 - 250 Units</td>
-                            <td>35% OFF</td>
-                            <td>7-10 Days</td>
-                            <td>Dedicated Project Manager</td>
-                        </tr>
-                        <tr class="table-active">
-                            <td class="text-secondary fw-bold">250+ (Enterprise)</td>
-                            <td class="text-secondary fw-bold">Contract Pricing</td>
-                            <td>Flexible Schedule</td>
-                            <td>Full Account Management</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="custom-card p-0 overflow-hidden shadow-lg border-0 fade-in">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="bg-light">
+                            <tr class="text-secondary small">
+                                <th class="py-3 px-4">Quantity Range</th>
+                                <th class="py-3 px-4">Discount</th>
+                                <th class="py-3 px-4">Lead Time</th>
+                                <th class="py-3 px-4">Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-3 px-4 fw-medium">1 - 10 Units</td>
+                                <td class="py-3 px-4">0%</td>
+                                <td class="py-3 px-4">48 Hours</td>
+                                <td class="py-3 px-4">Self-Service Portal</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 fw-medium">11 - 50 Units</td>
+                                <td class="py-3 px-4 text-success fw-bold">15% OFF</td>
+                                <td class="py-3 px-4">4-5 Days</td>
+                                <td class="py-3 px-4">Email Support</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 fw-medium">51 - 250 Units</td>
+                                <td class="py-3 px-4 text-success fw-bold">35% OFF</td>
+                                <td class="py-3 px-4">7-10 Days</td>
+                                <td class="py-3 px-4">Dedicated Project Manager</td>
+                            </tr>
+                            <tr class="table-active">
+                                <td class="py-3 px-4 text-secondary fw-bold">250+ (Enterprise)</td>
+                                <td class="py-3 px-4 text-secondary fw-bold">Contract Pricing</td>
+                                <td class="py-3 px-4">Flexible Schedule</td>
+                                <td class="py-3 px-4">Full Account Management</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
@@ -200,10 +203,16 @@
     </section>
 
     <!-- Section 5: CTA -->
-    <section class="py-5 bg-secondary text-white text-center">
+    <section class="py-5">
         <div class="container py-5">
-            <h2 class="fw-bold mb-4">Ready to start your production run?</h2>
-            <a href="dashboard.html" class="btn btn-dark btn-lg px-5">Get Instant Quote Now</a>
+            <div class="custom-card p-5 rounded-5 text-center fade-in shadow-lg" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); border: none;">
+                <h2 class="text-white mb-4">Ready to start your production run?</h2>
+                <p class="text-white mb-5 opacity-80 lead mx-auto" style="max-width: 600px;">Get a comprehensive price breakdown and lead time analysis from our experts in exactly 60 seconds.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="dashboard.html" class="btn btn-light btn-lg px-5 shadow-sm text-primary fw-bold" style="transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">Get Instant Quote Now</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg px-5 shadow-sm" style="transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">Consult Engineering</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -212,7 +221,7 @@
     <footer>
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-3">
+                <div class="col-md-6 col-xl-3">
                     <a class="footer-logo brand-logo-container" href="index.html">
                         <i class="fas fa-cube brand-logo-icon"></i>
                         <span class="brand-name">PRECISION 3D</span>
@@ -226,7 +235,7 @@
                         <a href="#" class="footer-social-icon x-twitter"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-md-6 col-xl-2">
                     <h5 class="mb-4">Quick Links</h5>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
@@ -236,7 +245,7 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-md-6 col-xl-3">
                     <h5 class="mb-4">Services</h5>
                     <ul class="footer-links">
                         <li><a href="#">FDM Printing</a></li>
@@ -245,7 +254,7 @@
                         <li><a href="#">Metal Manufacturing</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-6 col-xl-4">
                     <h5 class="mb-4">Newsletter</h5>
                     <p class="text-secondary">Subscribe to get the latest manufacturing insights.</p>
                     <form class="mt-4">
@@ -263,7 +272,7 @@
                     <p class="mb-0">&copy; 2026 Precision 3D. All rights reserved.</p>
                 </div>
                 <div class="col-md-4 text-center text-md-end">
-                    <a href="#" class="footer-back-to-top"><i class="fas fa-arrow-up"></i></a>
+
                 </div>
             </div>
         </div>

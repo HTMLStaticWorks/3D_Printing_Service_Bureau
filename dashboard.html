@@ -67,7 +67,7 @@
                     </button>
                     <h2 class="mb-0 h4">Project Dashboard</h2>
                 </div>
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center gap-2">
                     <span class="me-3 d-none d-md-inline">Welcome, <strong>John Davidson</strong></span>
                     <div class="dropdown me-3">
                         <img src="https://ui-avatars.com/api/?name=John+D&background=FF6B35&color=fff" class="rounded-circle cursor-pointer" width="40" data-bs-toggle="dropdown" alt="User">
@@ -136,32 +136,32 @@
                                     </thead>
                                     <tbody class="small">
                                         <tr>
-                                            <td><i class="fas fa-file-invoice me-2"></i> Turbine_Blade_V2.stl</td>
+                                            <td><i class="fas fa-file-invoice me-2 text-secondary"></i> Turbine_Blade_V2.stl</td>
                                             <td>Titanium Grade 5</td>
-                                            <td><span class="order-status-badge status-processing">Processing</span></td>
+                                            <td><span class="badge bg-secondary bg-opacity-10 text-secondary rounded-pill px-3 py-2 fw-bold border border-secondary">Processing</span></td>
                                             <td>Mar 25, 2026</td>
-                                            <td><button class="btn btn-sm btn-link"><i class="fas fa-ellipsis-h"></i></button></td>
+                                            <td><button class="btn btn-sm btn-link text-secondary"><i class="fas fa-ellipsis-h"></i></button></td>
                                         </tr>
                                         <tr>
-                                            <td><i class="fas fa-file-invoice me-2"></i> Housing_Gasket.step</td>
+                                            <td><i class="fas fa-file-invoice me-2 text-secondary"></i> Housing_Gasket.step</td>
                                             <td>SLA Rigid Resin</td>
-                                            <td><span class="order-status-badge status-shipping">Shipping</span></td>
+                                            <td><span class="badge bg-secondary bg-opacity-10 text-secondary rounded-pill px-3 py-2 fw-bold border border-secondary">Shipping</span></td>
                                             <td>Mar 24, 2026</td>
-                                            <td><button class="btn btn-sm btn-link"><i class="fas fa-ellipsis-h"></i></button></td>
+                                            <td><button class="btn btn-sm btn-link text-secondary"><i class="fas fa-ellipsis-h"></i></button></td>
                                         </tr>
                                         <tr>
-                                            <td><i class="fas fa-file-invoice me-2"></i> Mounting_Bracket.stl</td>
+                                            <td><i class="fas fa-file-invoice me-2 text-secondary"></i> Mounting_Bracket.stl</td>
                                             <td>SLS Nylon 12</td>
-                                            <td><span class="order-status-badge status-completed">Completed</span></td>
+                                            <td><span class="badge bg-secondary bg-opacity-10 text-secondary rounded-pill px-3 py-2 fw-bold border border-secondary">Completed</span></td>
                                             <td>Mar 20, 2026</td>
-                                            <td><button class="btn btn-sm btn-link"><i class="fas fa-ellipsis-h"></i></button></td>
+                                            <td><button class="btn btn-sm btn-link text-secondary"><i class="fas fa-ellipsis-h"></i></button></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-md-6 col-xl-4">
                         <div class="custom-card p-4 h-100">
                             <h5 class="mb-4">Quick Quote</h5>
                             <p class="small text-secondary">Upload a new CAD file to get an instant pricing estimate.</p>
@@ -183,7 +183,7 @@
                             <h3 class="mb-4">Instant Quoting System</h3>
                             <div class="mb-4">
                                 <label class="form-label">Select Material Technology</label>
-                                <select class="form-select border-0 shadow-sm p-3 bg-light" id="quote-material">
+                                <select class="form-select custom-form-field shadow-sm p-3" id="quote-material">
                                     <option value="fdm">FDM - PLA/ABS ($)</option>
                                     <option value="sla">SLA - High Detail Resin ($$)</option>
                                     <option value="sls">SLS - Production Nylon ($$$)</option>
@@ -192,11 +192,20 @@
                             </div>
                             <div class="mb-4">
                                 <label class="form-label">Quantity</label>
-                                <input type="number" class="form-control p-3 border-0 bg-light" id="quote-qty" value="1" min="1">
+                                <select class="form-select custom-form-field p-3 shadow-sm" id="quote-qty">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100+</option>
+                                </select>
                             </div>
                             <div class="mb-4">
                                 <label class="form-label">Upload 3D Model</label>
-                                <div class="p-5 border border-dashed rounded-4 text-center bg-light" style="border-style: dashed !important; border-width: 2px !important;">
+                                <div class="p-5 border border-dashed rounded-4 text-center custom-form-field" style="border-style: dashed !important; border-width: 2px !important;">
                                     <i class="fas fa-file-medical fa-3x text-secondary mb-3"></i>
                                     <p class="mb-0">Click to upload your model</p>
                                     <input type="file" class="d-none" id="file-input">
@@ -222,7 +231,7 @@
                         <h3 class="mb-0">Full Order History</h3>
                         <div class="d-flex g-2">
                             <button class="btn btn-outline-secondary btn-sm me-2">Export CSV</button>
-                            <input type="text" class="form-control form-control-sm" style="width: 200px;" placeholder="Search orders...">
+                            <input type="text" class="form-control form-control-sm custom-form-field" style="width: 200px;" placeholder="Search orders...">
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -244,7 +253,7 @@
                                     <td>Drone_Wing_Left.stl</td>
                                     <td>Carbon Fiber FDM</td>
                                     <td>$245.00</td>
-                                    <td><button class="btn btn-sm btn-outline-primary">Invoice</button></td>
+                                    <td><button class="btn btn-sm btn-outline-secondary cta-btn-hover">Invoice</button></td>
                                 </tr>
                                 <tr>
                                     <td>#ORD-7650</td>
@@ -252,7 +261,7 @@
                                     <td>Camera_Mount_Gimbal</td>
                                     <td>Nylon SLS</td>
                                     <td>$120.00</td>
-                                    <td><button class="btn btn-sm btn-outline-primary">Invoice</button></td>
+                                    <td><button class="btn btn-sm btn-outline-secondary cta-btn-hover">Invoice</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -268,15 +277,15 @@
                             <h4 class="mb-4">Profile Settings</h4>
                             <div class="mb-3">
                                 <label class="form-label">Full Name</label>
-                                <input type="text" class="form-control" value="John Davidson">
+                                <input type="text" class="form-control custom-form-field" value="John Davidson">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Company</label>
-                                <input type="text" class="form-control" value="Davidson Aerospace">
+                                <input type="text" class="form-control custom-form-field" value="Davidson Aerospace">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email Address</label>
-                                <input type="email" class="form-control" value="john@davidsonaero.com">
+                                <input type="email" class="form-control custom-form-field" value="john@davidsonaero.com">
                             </div>
                             <button class="btn btn-primary mt-4">Save Changes</button>
                         </div>
@@ -287,14 +296,14 @@
                             <p class="text-secondary small">Default shipping and billing across your projects.</p>
                             <div class="mb-3">
                                 <label class="form-label">Default Shipping Method</label>
-                                <select class="form-select">
+                                <select class="form-select custom-form-field">
                                     <option>Standard (3-5 days)</option>
                                     <option selected>Express (Next Day)</option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Global Discount Code</label>
-                                <input type="text" class="form-control" placeholder="AERO2026">
+                                <input type="text" class="form-control custom-form-field" placeholder="AERO2026">
                             </div>
                         </div>
                     </div>

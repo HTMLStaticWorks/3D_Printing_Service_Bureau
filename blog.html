@@ -21,7 +21,7 @@
 <body data-bs-spy="scroll" data-bs-target=".navbar">
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="brand-logo-container" href="index.html">
                 <i class="fas fa-cube brand-logo-icon"></i>
@@ -65,7 +65,7 @@
                     <a href="login.html" class="btn btn-outline-primary header-btn">Login</a>
                     <a href="signup.html" class="btn btn-primary header-btn">Sign Up</a>
                     <button class="rtl-toggle" id="rtl-toggle">RTL</button>
-                    <button class="theme-switch ms-2" id="theme-toggle">
+                    <button class="theme-switch" id="theme-toggle">
                         <i class="fas fa-moon"></i>
                     </button>
                 </div>
@@ -74,13 +74,16 @@
     </nav>
 
     <!-- Section 1: Blog Hero -->
-    <header class="hero-section"
-        style="background-image: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format'); height: 40vh;">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content text-center mx-auto">
+    <header class="hero-section position-relative"
+        style="background-image: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format'); height: 40vh; background-size: cover; background-position: center;">
+        <div class="hero-overlay" style="background: rgba(13, 27, 42, 0.82) !important;"></div>
+        <div class="container hero-content text-center mx-auto position-relative" style="z-index: 2;">
             <div class="fade-in">
-                <span class="section-tag text-white-50">KNOWLEDGE HUB</span>
-                <h1 class="hero-title text-white">Industry <span class="text-secondary">Insights</span></h1>
+                <span class="section-tag"
+                    style="color: rgba(255, 255, 255, 0.9) !important; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">KNOWLEDGE
+                    HUB</span>
+                <h1 class="hero-title fw-bold mt-3" style="color: #ffffff !important;">Industry <span
+                        style="color: var(--secondary) !important;">Insights</span></h1>
             </div>
         </div>
     </header>
@@ -92,14 +95,15 @@
                 <div class="col-md-6 mb-3 mb-md-0">
                     <ul class="nav nav-pills gap-2">
                         <li class="nav-item"><a class="nav-link active rounded-pill px-4" href="#">All Posts</a></li>
-                        <li class="nav-item"><a class="nav-link rounded-pill px-4 border" href="#">Technolgoy</a></li>
+                        <li class="nav-item"><a class="nav-link rounded-pill px-4 border" href="#">Technology</a></li>
                         <li class="nav-item"><a class="nav-link rounded-pill px-4 border" href="#">Materials</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <div class="dropdown">
-                        <button class="btn btn-outline-secondary w-100 dropdown-toggle" type="button"
-                            data-bs-toggle="dropdown">
+                        <button
+                            class="btn btn-outline-secondary w-100 dropdown-toggle d-flex justify-content-between align-items-center px-4"
+                            type="button" data-bs-toggle="dropdown">
                             Recent Posts
                         </button>
                         <ul class="dropdown-menu w-100">
@@ -114,54 +118,64 @@
                 <div class="col-lg-8">
                     <div class="row g-4">
                         <div class="col-md-6 fade-in">
-                            <div class="custom-card p-0 overflow-hidden border-0 bg-transparent">
+                            <div
+                                class="custom-card p-0 overflow-hidden border-0 bg-transparent h-100 d-flex flex-column">
                                 <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=800&auto=format"
                                     class="w-100 rounded-4" style="height: 250px; object-fit: cover;" alt="Blog">
-                                <div class="py-3">
+                                <div class="py-3 d-flex flex-column flex-grow-1">
                                     <span class="text-secondary small fw-bold">TECHNOLOGY / MARCH 20, 2026</span>
-                                    <h4 class="mt-2 text-heading">The Impact of Metal 3D Printing on Aerospace Supply</h4>
+                                    <h4 class="mt-2 text-heading">The Impact of Metal 3D Printing on Aerospace Supply
+                                    </h4>
                                     <p class="text-secondary small">Metal additive manufacturing is reducing lead times
                                         for rocket engine components by over 60%...</p>
-                                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" class="learn-more mt-auto">Learn More <i
+                                            class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 fade-in">
-                            <div class="custom-card p-0 overflow-hidden border-0 bg-transparent">
+                            <div
+                                class="custom-card p-0 overflow-hidden border-0 bg-transparent h-100 d-flex flex-column">
                                 <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=800&auto=format"
                                     class="w-100 rounded-4" style="height: 250px; object-fit: cover;" alt="Blog">
-                                <div class="py-3">
+                                <div class="py-3 d-flex flex-column flex-grow-1">
                                     <span class="text-secondary small fw-bold">MATERIALS / MARCH 15, 2026</span>
-                                    <h4 class="mt-2 text-heading">Next-Gen Carbon Fiber Polymers for Automotive Parts</h4>
+                                    <h4 class="mt-2 text-heading">Next-Gen Carbon Fiber Polymers for Automotive Parts
+                                    </h4>
                                     <p class="text-secondary small">How reinforced filaments are bridging the gap
                                         between prototyping and end-use production...</p>
-                                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" class="learn-more mt-auto">Learn More <i
+                                            class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 fade-in">
-                            <div class="custom-card p-0 overflow-hidden border-0 bg-transparent">
+                            <div
+                                class="custom-card p-0 overflow-hidden border-0 bg-transparent h-100 d-flex flex-column">
                                 <img src="https://images.pexels.com/photos/7788504/pexels-photo-7788504.jpeg"
                                     class="w-100 rounded-4" style="height: 250px; object-fit: cover;" alt="Blog">
-                                <div class="py-3">
+                                <div class="py-3 d-flex flex-column flex-grow-1">
                                     <span class="text-secondary small fw-bold">CASE STUDY / MARCH 10, 2026</span>
                                     <h4 class="mt-2 text-heading">Precision Medical Implants Using SLA Lithography</h4>
                                     <p class="text-secondary small">Patient-specific medical solutions are becoming more
                                         accessible thanks to high-resolution resin printing...</p>
-                                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" class="learn-more mt-auto">Learn More <i
+                                            class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 fade-in">
-                            <div class="custom-card p-0 overflow-hidden border-0 bg-transparent">
+                            <div
+                                class="custom-card p-0 overflow-hidden border-0 bg-transparent h-100 d-flex flex-column">
                                 <img src="https://images.pexels.com/photos/7220829/pexels-photo-7220829.jpeg"
                                     class="w-100 rounded-4" style="height: 250px; object-fit: cover;" alt="Blog">
-                                <div class="py-3">
+                                <div class="py-3 d-flex flex-column flex-grow-1">
                                     <span class="text-secondary small fw-bold">TRENDS / MARCH 5, 2026</span>
-                                    <h4 class="mt-2 text-heading">Towards Zero-Waste Manufacturing: The SLS Advantage</h4>
+                                    <h4 class="mt-2 text-heading">Towards Zero-Waste Manufacturing: The SLS </h4>
                                     <p class="text-secondary small">Why SLS powder recycling is setting new standards
                                         for sustainable industrial manufacturing...</p>
-                                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" class="learn-more mt-auto">Learn More <i
+                                            class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -171,8 +185,8 @@
                     <div class="fade-in mb-5">
                         <h5 class="text-heading">Search Article</h5>
                         <div class="input-group mt-3">
-                            <input type="text" class="form-control" placeholder="Type here...">
-                            <button class="btn btn-secondary"><i class="fas fa-search"></i></button>
+                            <input type="text" class="form-control border-secondary" placeholder="Type here...">
+                            <button class="btn btn-secondary search-btn"><i class="fas fa-search"></i></button>
                         </div>
                     </div>
                     <div class="fade-in mb-5">
@@ -205,27 +219,27 @@
                 <h2>Our Daily Prints</h2>
             </div>
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6 col-12 fade-in">
+                <div class="col-lg-4 col-md-6 col-12 fade-in">
                     <img src="https://images.pexels.com/photos/12268465/pexels-photo-12268465.jpeg"
                         class="daily-print-img" alt="3D Printed Prototype">
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 fade-in">
+                <div class="col-lg-4 col-md-6 col-12 fade-in">
                     <img src="https://images.pexels.com/photos/19124461/pexels-photo-19124461.jpeg"
                         class="daily-print-img" alt="Industrial 3D Component">
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 fade-in">
+                <div class="col-lg-4 col-md-6 col-12 fade-in">
                     <img src="https://images.pexels.com/photos/19588204/pexels-photo-19588204.jpeg"
                         class="daily-print-img" alt="SLA Resin Print">
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 fade-in">
+                <div class="col-lg-4 col-md-6 col-12 fade-in">
                     <img src="https://images.pexels.com/photos/35595049/pexels-photo-35595049.jpeg"
                         class="daily-print-img" alt="Metallic 3D Job">
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 fade-in">
+                <div class="col-lg-4 col-md-6 col-12 fade-in">
                     <img src="https://images.pexels.com/photos/7163020/pexels-photo-7163020.jpeg"
                         class="daily-print-img" alt="Additive Manufacturing Test">
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 fade-in">
+                <div class="col-lg-4 col-md-6 col-12 fade-in">
                     <img src="https://images.pexels.com/photos/9097040/pexels-photo-9097040.jpeg"
                         class="daily-print-img" alt="Precision Print Batch">
                 </div>
@@ -238,13 +252,17 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="custom-card p-5 text-center fade-in bg-primary text-white border-0 shadow-lg" style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%) !important;">
+                    <div class="custom-card p-5 text-center fade-in bg-primary text-white border-0 shadow-lg"
+                        style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%) !important;">
                         <h3 class="text-white mb-3">Don't Miss an Update</h3>
-                        <p class="text-white-50 mb-4">Join 10,000+ industry professionals receiving our weekly technical digest and manufacturing insights.</p>
+                        <p class="text-white-50 mb-4">Join 10,000+ industry professionals receiving our weekly technical
+                            digest and manufacturing insights.</p>
                         <form class="mt-2">
                             <div class="input-group mx-auto" style="max-width: 600px;">
-                                <input type="email" class="form-control" placeholder="Your work email" style="height: 55px; border: none;">
-                                <button class="btn btn-secondary px-5 fw-bold" type="button" style="height: 55px; font-size: 1.1rem;">Subscribe Now</button>
+                                <input type="email" class="form-control" placeholder="Your work email"
+                                    style="height: 55px; border: none;">
+                                <button class="btn btn-secondary cta-btn-hover px-5 fw-bold" type="button"
+                                    style="height: 55px; font-size: 1.1rem;">Subscribe Now</button>
                             </div>
                         </form>
                     </div>
@@ -257,7 +275,7 @@
     <footer class="mt-5">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-3">
+                <div class="col-md-6 col-xl-3">
                     <a class="brand-logo-container mb-4" href="index.html">
                         <i class="fas fa-cube brand-logo-icon"></i>
                         <span class="brand-name">PRECISION 3D</span>
@@ -271,7 +289,7 @@
                         <a href="#" class="footer-social-icon x-twitter"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-md-6 col-xl-2">
                     <h5 class="mb-4">Quick Links</h5>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
@@ -281,7 +299,7 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-md-6 col-xl-3">
                     <h5 class="mb-4">Services</h5>
                     <ul class="footer-links">
                         <li><a href="#">FDM Printing</a></li>
@@ -290,7 +308,7 @@
                         <li><a href="#">Metal Manufacturing</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-6 col-xl-4">
                     <h5 class="mb-4">Newsletter</h5>
                     <p class="text-secondary small mb-4">Subscribe to get the latest manufacturing insights.</p>
                     <form>
@@ -308,7 +326,7 @@
                     <p class="mb-0">&copy; 2026 Precision 3D. All rights reserved.</p>
                 </div>
                 <div class="col-md-4 text-center text-md-end">
-                    <a href="#" class="footer-back-to-top"><i class="fas fa-arrow-up"></i></a>
+
                 </div>
             </div>
         </div>

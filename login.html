@@ -39,6 +39,15 @@
             font-size: 1.5rem;
             font-weight: 700;
         }
+        .auth-link {
+            color: var(--secondary) !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .auth-link:hover {
+            color: var(--secondary-hover) !important;
+            text-decoration: underline;
+        }
         .auth-header {
             text-align: center;
             margin-bottom: 25px;
@@ -133,9 +142,14 @@
 </head>
 <body>
 
+    <button class="theme-switch shadow" id="theme-toggle" style="position: absolute; top: 20px; right: 20px; z-index: 1000; background: var(--card-bg) !important;">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <div class="auth-card fade-in appear">
-        <a class="brand-link" href="index.html">
-            <i class="fas fa-cube me-2"></i>Precision 3D
+        <a class="brand-logo-container" href="index.html" style="justify-content: center; margin-bottom: 25px;">
+            <i class="fas fa-cube brand-logo-icon"></i>
+            <span class="brand-name">PRECISION 3D</span>
         </a>
         
         <div class="auth-header">
@@ -159,7 +173,7 @@
                     <input class="form-check-input" type="checkbox" id="rememberMe">
                     <label class="form-check-label" for="rememberMe">Remember me</label>
                 </div>
-                <a href="#" class="text-secondary text-decoration-none fw-bold">Forgot password?</a>
+                <a href="#" class="auth-link fw-bold">Forgot password?</a>
             </div>
 
             <a href="dashboard.html" class="btn btn-primary w-100 py-3 mb-3 rounded-3 shadow-sm fw-bold">Login now</a>
@@ -180,7 +194,7 @@
             </div>
 
             <div class="text-center mt-4">
-                <p class="small text-secondary mb-0">Don't have an account? <a href="signup.html" class="text-secondary fw-bold">Sign up</a></p>
+                <p class="small mb-0" style="color: var(--body-text); opacity: 0.8;">Don't have an account? <a href="signup.html" class="auth-link fw-bold ms-1">Sign up</a></p>
             </div>
         </form>
     </div>
