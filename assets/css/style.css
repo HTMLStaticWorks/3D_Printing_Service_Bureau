@@ -34,7 +34,7 @@
     /* Scoped Heading Tokens */
     --heading-color: #0f172a;
     
-    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
 }
 
 body.dark-mode {
@@ -63,7 +63,11 @@ body.dark-mode {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Targeted Transitions for Performance - Especially Mobile */
+body, header, section, footer, div, span, p, a, button, input, select, .custom-card, .sidebar, .navbar {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Global Premium Button Interactions Refinement */
@@ -1456,7 +1460,11 @@ section.bg-dark span:not(.section-tag) {
     }
 }
 
-/* Instant Dashboard Header Text - Avoid slow theme transitions */
+/* Optimized Dashboard Header Transitions - Fast & Smooth */
+.main-content header {
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
 .main-content header h2, 
 .main-content header h4, 
 .main-content header span, 
@@ -1464,7 +1472,7 @@ section.bg-dark span:not(.section-tag) {
 .main-content header .btn,
 .main-content header .rtl-toggle,
 .main-content header .theme-switch {
-    transition: none !important;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 /* Industry Standards / Reliability Section Fix */
@@ -1482,6 +1490,39 @@ section.bg-dark span:not(.section-tag) {
     border-color: var(--primary) !important;
     color: #ffffff !important;
     transform: scale(1.05);
+}
+
+/* Dashboard Search Input with Icon */
+.search-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-input-wrapper .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--body-text);
+    opacity: 0.5;
+    font-size: 0.85rem;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.order-search-input {
+    padding-left: 35px !important;
+}
+
+@media (max-width: 575px) {
+    .order-search-input {
+        padding-left: 30px !important;
+        font-size: 0.85rem !important;
+    }
+    .search-input-wrapper .search-icon {
+        left: 10px;
+        font-size: 0.8rem;
+    }
 }
 
 /* Newsletter & CTA Button Hover Over Dark Background */
@@ -1511,6 +1552,12 @@ section.bg-dark span:not(.section-tag) {
     border-color: var(--secondary) !important;
     box-shadow: 0 0 0 0.25rem rgba(255, 107, 53, 0.25) !important;
     outline: none;
+}
+
+@media (min-width: 768px) {
+    .order-search-input {
+        min-width: 150px;
+    }
 }
 
 /* Force visible white drop-down chevron for form-select in Dark Mode */

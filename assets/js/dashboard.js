@@ -146,4 +146,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (uploadTarget) uploadTarget.click();
         });
     }
+
+    // Dynamic Search Placeholder (Mobile vs Desktop)
+    const orderSearch = document.querySelector('.order-search-input');
+    if (orderSearch) {
+        const updatePlaceholder = () => {
+            if (window.innerWidth < 768) {
+                orderSearch.placeholder = 'Search';
+            } else {
+                orderSearch.placeholder = 'Search orders...';
+            }
+        };
+        updatePlaceholder();
+        window.addEventListener('resize', updatePlaceholder);
+    }
 });
