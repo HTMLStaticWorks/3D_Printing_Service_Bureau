@@ -5,9 +5,28 @@
 */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Helper: Force all fade-in children visible inside a section
+    function forceShowSection(section) {
+        section.classList.add('active');
+        section.classList.remove('d-none');
+        // Immediately reveal all fade-in children without waiting for IntersectionObserver
+        section.querySelectorAll('.fade-in').forEach(el => {
+            el.classList.add('appear');
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+        });
+    }
+
     // Sidebar Navigation Logic
     const menuItems = document.querySelectorAll('.sidebar-item[data-target]');
     const sections = document.querySelectorAll('.dashboard-section');
+
+    // Initialize: ensure active section is visible on page load
+    sections.forEach(sec => {
+        if (sec.classList.contains('active')) {
+            forceShowSection(sec);
+        }
+    });
 
     menuItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -20,8 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Switch Sections
             sections.forEach(sec => {
                 if (sec.id === target || sec.id === `section-${target}`) {
-                    sec.classList.add('active');
-                    sec.classList.remove('d-none');
+                    forceShowSection(sec);
                 } else {
                     sec.classList.remove('active');
                     sec.classList.add('d-none');
@@ -29,9 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Close sidebar on mobile after click
-            if (window.innerWidth < 992) {
+            if (window.innerWidth < 1200) {
                 const sidebar = document.getElementById('sidebar');
-                const overlay = document.querySelector('.sidebar-overlay'); // Ensure overlay is defined or accessible
+                const overlay = document.querySelector('.sidebar-overlay');
                 if (sidebar) sidebar.classList.remove('active');
                 if (overlay) overlay.classList.remove('active');
                 document.body.classList.remove('menu-open');

@@ -64,6 +64,42 @@ body.dark-mode {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Global Premium Button Interactions */
+#services-quote-btn,
+.cta-banner-2 .btn-dark,
+.cta-banner-2 .btn-outline-light {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    cursor: pointer !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    z-index: 10;
+}
+
+#services-quote-btn:hover,
+.cta-banner-2 .btn-dark:hover,
+.cta-banner-2 .btn-outline-light:hover {
+    background-color: #ffffff !important;
+    color: var(--secondary) !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35) !important;
+    transform: scale(1.06) translateY(-10px);
+}
+
+/* Services Page Special Case - Navy Hover */
+#services-quote-btn:hover {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+    border-color: var(--primary) !important;
+}
+
+#services-quote-btn:active,
+.cta-banner-2 .btn-dark:active,
+.cta-banner-2 .btn-outline-light:active {
+    transform: scale(0.96) translateY(-2px) !important;
+    transition: all 0.1s ease !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--body-bg);
@@ -240,7 +276,8 @@ body.menu-open {
     overflow: hidden !important;
 }
 
-@media (max-width: 991px) {
+/* Updated to match navbar-expand-xl breakpoint: hamburger at <1200px */
+@media (max-width: 1199px) {
     .navbar-collapse {
         position: fixed;
         top: 70px;
@@ -252,8 +289,8 @@ body.menu-open {
         z-index: 9999;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center items horizontally */
-        justify-content: center; /* Center items vertically */
+        align-items: center;
+        justify-content: center;
         padding: 40px 20px;
         overflow-y: auto !important;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -298,7 +335,7 @@ body.menu-open {
     .nav-auth-buttons {
         width: 100%;
         display: flex !important;
-        flex-direction: row !important; /* Force side by side */
+        flex-direction: row !important;
         justify-content: center;
         align-items: center;
         gap: 12px !important;
@@ -321,24 +358,26 @@ body.menu-open {
         font-size: 0.9rem !important;
     }
 
-    .dropdown-menu {
+    .navbar-nav .dropdown-menu {
         position: static !important;
         width: 100%;
         background: transparent !important;
         box-shadow: none !important;
         border: none !important;
         padding: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: none !important;
+        display: none !important;
+    }
+
+    .navbar-nav .dropdown-menu.show {
+        display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
-        transform: none !important;
-        display: none;
     }
 
-    .dropdown-menu.show {
-        display: block !important;
-    }
-
-    .dropdown-item {
+    .navbar-nav .dropdown-item {
         font-size: 1.1rem;
         text-align: center;
         padding: 12px !important;
@@ -394,6 +433,74 @@ body.dark-mode .custom-toggler {
 .header-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   CTA Section Buttons — "Ready to Print"
+   ======================================== */
+.cta-btn-group {
+    gap: 1rem;
+}
+
+.cta-primary-btn,
+.cta-outline-btn {
+    padding: 14px 36px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 10px;
+    white-space: nowrap;
+    letter-spacing: 0.4px;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+}
+
+/* Primary — orange fill */
+.cta-primary-btn {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: #ffffff;
+}
+.cta-primary-btn:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: var(--secondary);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 16px 40px rgba(255, 107, 53, 0.4);
+}
+.cta-primary-btn:active {
+    transform: translateY(-1px) scale(0.97);
+    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.3);
+}
+
+/* Outline — white border */
+.cta-outline-btn {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    color: #ffffff;
+}
+.cta-outline-btn:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: var(--primary);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+.cta-outline-btn:active {
+    transform: translateY(-1px) scale(0.97);
+}
+
+/* Mobile: full-width buttons stacked */
+@media (max-width: 479px) {
+    .cta-primary-btn,
+    .cta-outline-btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    .cta-btn-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
 .hero-section {
@@ -862,24 +969,34 @@ body.rtl-mode .footer-social-icons {
     border-color: var(--secondary);
 }
 
-/* Toggle Switch */
-.theme-switch {
+/* Toggle Switches (Theme & RTL) */
+.theme-switch, #rtl-toggle {
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--heading-color);
-    padding: 0;
+    padding: 0 12px;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 0.85rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 42px;
-    height: 34px;
+    height: 42px; /* Matched to .header-btn for perfect alignment */
     transition: var(--transition);
+    text-decoration: none !important;
+    margin-left: 10px; /* Added margin for safe spacing */
 }
 
-.theme-switch:hover {
+.theme-switch {
+    min-width: 42px;
+}
+
+#rtl-toggle {
+    min-width: 55px;
+    font-weight: 600;
+}
+
+.theme-switch:hover, #rtl-toggle:hover {
     background-color: var(--secondary);
     color: white;
     border-color: var(--secondary);
@@ -1218,11 +1335,22 @@ section.bg-dark span:not(.section-tag) {
 .dashboard-section {
     display: none;
     opacity: 0;
+    pointer-events: none;
 }
 
 .dashboard-section.active {
     display: block !important;
-    animation: dashboardFadeIn 0.4s ease-out forwards;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    animation: dashboardFadeIn 0.35s ease-out forwards;
+}
+
+/* Ensure all fade-in children inside active sections are immediately visible */
+.dashboard-section.active .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
 }
 
 @keyframes dashboardFadeIn {
@@ -1234,18 +1362,6 @@ section.bg-dark span:not(.section-tag) {
         opacity: 1; 
         transform: translateY(0); 
     }
-}
-
-/* CTA Banner Buttons Fix */
-.cta-banner-2 .btn-dark {
-    transition: all 0.3s ease;
-}
-
-.cta-banner-2 .btn-dark:hover {
-    background-color: #212529 !important;
-    color: #ffffff !important;
-    border-color: #212529 !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 /* Industry Standards / Reliability Section Fix */
@@ -1342,3 +1458,109 @@ body.dark-mode .table th {
         display: none !important;
     }
 }
+
+/* Blog Page Dropdown & Sidebar Filter Fixes (Magazine Layout Upgrade) */
+.filter-dropdown .dropdown-toggle::after {
+    margin-left: 15px !important;
+    font-size: 0.8rem;
+    vertical-align: middle;
+}
+
+.filter-dropdown .dropdown-menu {
+    border: 1px solid var(--border-color) !important;
+    background-color: var(--card-bg) !important;
+    padding: 10px 0 !important;
+    z-index: 1050 !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4) !important;
+    margin-top: 5px !important;
+}
+
+.filter-dropdown .dropdown-item {
+    color: var(--body-text) !important;
+    padding: 12px 25px !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-dropdown .dropdown-item:hover {
+    background-color: var(--secondary) !important;
+    color: #ffffff !important;
+    padding-left: 35px !important; /* Slide-in effect */
+}
+
+/* Sidebar Topics Filters (Vertical Stack) */
+.sidebar-filters .nav-link {
+    width: 100%;
+    text-align: left;
+    color: var(--body-text) !important;
+    border: 1.5px solid #cbd5e1 !important; /* Increased contrast for light mode */
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    margin-bottom: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .sidebar-filters .nav-link {
+    border-color: var(--border-color) !important;
+}
+
+.sidebar-filters .nav-link.active {
+    background-color: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.sidebar-filters .nav-link:hover:not(.active) {
+    background-color: var(--section-tag-bg) !important;
+    border-color: var(--secondary) !important;
+    transform: translateX(10px);
+}
+
+@media (max-width: 991px) {
+    .filter-dropdown {
+        margin-top: 20px;
+    }
+}
+
+/* Dropdown Contrast Improvement for Light Mode */
+.filter-dropdown .btn-outline-secondary {
+    border: 1.5px solid #cbd5e1 !important;
+    color: var(--body-text) !important;
+    font-weight: 500;
+}
+
+.filter-dropdown .btn-outline-secondary:hover,
+.filter-dropdown .btn-outline-secondary:focus {
+    border-color: var(--secondary) !important;
+    background-color: var(--section-tag-bg) !important;
+    color: var(--secondary) !important;
+}
+
+body.dark-mode .filter-dropdown .btn-outline-secondary {
+    border-color: var(--border-color) !important;
+    color: var(--body-text) !important;
+}
+
+/* Sidebar Stacking Context Fixes */
+.sidebar-widget {
+    position: relative;
+    background-color: transparent !important;
+}
+
+.filter-dropdown .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    min-width: 100% !important;
+    background-color: var(--card-bg) !important;
+    z-index: 2000 !important; /* Extremely high to beat any sibling widget */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Ensure no text bleed-through in Dark Mode */
+body.dark-mode .filter-dropdown .dropdown-menu {
+    background-color: #1e293b !important;
+}
+

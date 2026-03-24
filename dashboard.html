@@ -91,7 +91,7 @@
             <!-- Dashboard Sections -->
             
             <!-- Overview Section -->
-            <div id="section-overview" class="dashboard-section">
+            <div id="section-overview" class="dashboard-section active">
                 <div class="row g-4 mb-5">
                     <div class="col-md-3">
                         <div class="custom-card border-0 shadow-sm p-4">
@@ -165,8 +165,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-4">
-                        <div class="custom-card p-4 h-100">
+                    <div class="col-md-8 col-lg-4 mx-auto">
+                        <div class="custom-card p-4 h-100 text-center">
                             <h5 class="mb-4">Quick Quote</h5>
                             <p class="small text-secondary">Upload a new CAD file to get an instant pricing estimate.</p>
                             <div class="border border-dashed p-5 text-center rounded-4 cursor-pointer mb-4" id="upload-trigger">
@@ -231,40 +231,40 @@
             <!-- Orders Section -->
             <div id="section-orders" class="dashboard-section d-none">
                 <div class="custom-card p-5">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
                         <h3 class="mb-0">Full Order History</h3>
-                        <div class="d-flex g-2">
-                            <button class="btn btn-outline-secondary btn-sm me-2">Export CSV</button>
-                            <input type="text" class="form-control form-control-sm custom-form-field" style="width: 200px;" placeholder="Search orders...">
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn btn-outline-secondary btn-sm flex-grow-1 flex-md-grow-0">Export CSV</button>
+                            <input type="text" class="form-control form-control-sm custom-form-field flex-grow-1" style="min-width: 150px; max-width: 200px;" placeholder="Search orders...">
                         </div>
                     </div>
                     <div class="table-responsive">
                         <table class="table align-middle">
                             <thead class="text-secondary small fw-bold">
                                 <tr>
-                                    <th>#Order ID</th>
-                                    <th>Date</th>
+                                    <th class="text-nowrap">#Order ID</th>
+                                    <th class="text-nowrap">Date</th>
                                     <th>Project</th>
                                     <th>Material</th>
-                                    <th>Total Price</th>
+                                    <th class="text-nowrap">Total Price</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody class="small">
                                 <tr>
-                                    <td>#ORD-7721</td>
-                                    <td>Jan 12, 2026</td>
+                                    <td class="text-nowrap">#ORD-7721</td>
+                                    <td class="text-nowrap">Jan 12, 2026</td>
                                     <td>Drone_Wing_Left.stl</td>
                                     <td>Carbon Fiber FDM</td>
-                                    <td>$245.00</td>
+                                    <td class="text-nowrap">$245.00</td>
                                     <td><button class="btn btn-sm btn-outline-secondary cta-btn-hover">Invoice</button></td>
                                 </tr>
                                 <tr>
-                                    <td>#ORD-7650</td>
-                                    <td>Dec 28, 2025</td>
+                                    <td class="text-nowrap">#ORD-7650</td>
+                                    <td class="text-nowrap">Dec 28, 2025</td>
                                     <td>Camera_Mount_Gimbal</td>
                                     <td>Nylon SLS</td>
-                                    <td>$120.00</td>
+                                    <td class="text-nowrap">$120.00</td>
                                     <td><button class="btn btn-sm btn-outline-secondary cta-btn-hover">Invoice</button></td>
                                 </tr>
                             </tbody>

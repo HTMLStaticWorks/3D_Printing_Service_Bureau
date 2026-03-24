@@ -101,28 +101,28 @@
                             <div class="custom-card border-0 shadow-sm p-4">
                                 <span class="text-secondary small fw-bold">MTD REVENUE</span>
                                 <h3 class="mb-0 mt-2">$142,500</h3>
-                                <div class="text-success small mt-2"><i class="bi bi-arrow-up"></i> 12.5%</div>
+                                <div class="text-secondary small mt-2"><i class="bi bi-arrow-up"></i> 12.5%</div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="custom-card border-0 shadow-sm p-4">
                                 <span class="text-secondary small fw-bold">ACTIVE JOBS</span>
                                 <h3 class="mb-0 mt-2">156</h3>
-                                <div class="text-secondary small mt-2">640h uptime</div>
+                                <div class="text-muted small mt-2">640h uptime</div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="custom-card border-0 shadow-sm p-4">
                                 <span class="text-secondary small fw-bold">PENDING QUOTES</span>
                                 <h3 class="mb-0 mt-2">24</h3>
-                                <div class="text-warning small mt-2">Avg: 2h response</div>
+                                <div class="text-muted small mt-2">Avg: 2h response</div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="custom-card border-0 shadow-sm p-4">
                                 <span class="text-secondary small fw-bold">MATERIAL USAGE</span>
                                 <h3 class="mb-0 mt-2">1.2 Tons</h3>
-                                <div class="text-info small mt-2">Stock Level: Good</div>
+                                <div class="text-muted small mt-2">Stock Level: Good</div>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                                     <tr>
                                         <th>Project</th>
                                         <th>Material</th>
-                                        <th>Time Left</th>
+                                        <th class="text-nowrap">Time Left</th>
                                         <th>Progress</th>
                                         <th>Status</th>
                                     </tr>
@@ -144,13 +144,13 @@
                                     <tr>
                                         <td>Aerospace Turbine Housing</td>
                                         <td>Inconel 718</td>
-                                        <td>4h 12m</td>
+                                        <td class="text-nowrap">4h 12m</td>
                                         <td width="200">
                                             <div class="progress" style="height: 6px;">
                                                 <div class="progress-bar bg-secondary" style="width: 75%"></div>
                                             </div>
                                         </td>
-                                        <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                        <td><span class="badge" style="background-color: rgba(255,107,53,0.12); color: var(--secondary); border: 1px solid rgba(255,107,53,0.3);">Active</span></td>
                                     </tr>
                                     <tr>
                                         <td>Medical Dental Scaffolds</td>
@@ -158,10 +158,10 @@
                                         <td>0m</td>
                                         <td width="200">
                                             <div class="progress" style="height: 6px;">
-                                                <div class="progress-bar bg-success" style="width: 100%"></div>
+                                                <div class="progress-bar bg-secondary" style="width: 100%"></div>
                                             </div>
                                         </td>
-                                        <td><span class="badge bg-secondary-subtle text-secondary">Completed</span></td>
+                                        <td><span class="badge bg-secondary bg-opacity-10 text-secondary" style="border: 1px solid rgba(255,107,53,0.3);">Completed</span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -291,18 +291,22 @@
                                 <label class="form-label">Support Email</label>
                                 <input type="email" class="form-control" value="admin@precision3d.com">
                             </div>
-                            <div class="col-12">
-                                <div class="form-check form-switch mt-3">
-                                    <input class="form-check-switch" type="checkbox" checked>
-                                    <label class="form-check-label ms-2">Automatic Material Purchasing</label>
-                                </div>
-                                <div class="form-check form-switch mt-2">
-                                    <input class="form-check-switch" type="checkbox" checked>
-                                    <label class="form-check-label ms-2">Cloud-Quote Intelligence Engine</label>
+                            <div class="col-12 mt-3">
+                                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                                    <div class="flex-grow-1">
+                                        <div class="form-check form-switch mb-3 d-flex align-items-center">
+                                            <input class="form-check-input" type="checkbox" id="autoPurchase" checked>
+                                            <label class="form-check-label ms-3" for="autoPurchase">Automatic Material Purchasing</label>
+                                        </div>
+                                        <div class="form-check form-switch d-flex align-items-center">
+                                            <input class="form-check-input" type="checkbox" id="cloudEngine" checked>
+                                            <label class="form-check-label ms-3" for="cloudEngine">Cloud-Quote Intelligence Engine</label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-secondary px-5 cta-btn-hover flex-shrink-0">Save Configuration</button>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-secondary mt-5 px-5 cta-btn-hover">Save Configuration</button>
                     </div>
                 </div>
 

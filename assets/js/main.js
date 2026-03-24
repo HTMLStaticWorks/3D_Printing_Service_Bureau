@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', () => {
             const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-            if (bsCollapse && window.innerWidth < 992) {
+            if (bsCollapse && window.innerWidth < 1200) {
                 bsCollapse.hide();
             }
         });
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         const isNavbar = e.target.closest('.navbar');
-        if (!isNavbar && navbarCollapse.classList.contains('show') && window.innerWidth < 992) {
+        if (!isNavbar && navbarCollapse.classList.contains('show') && window.innerWidth < 1200) {
             const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
             if (bsCollapse) bsCollapse.hide();
         }
