@@ -28,12 +28,13 @@
     /* Hero Section Tokens */
     --hero-heading: #0f172a;
     --hero-text: #1b263b;
-    --hero-overlay: rgba(255, 255, 255, 0.6);
+    --hero-overlay: rgba(255, 255, 255, 0.5); /* Lighter for Light Mode */
+    --hero-brightness: brightness(1.15); /* Slightly brighter */
     
     /* Scoped Heading Tokens */
     --heading-color: #0f172a;
     
-    --transition: all 0.3s ease;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.dark-mode {
@@ -51,7 +52,8 @@ body.dark-mode {
     /* Hero Section Tokens */
     --hero-heading: #ffffff;
     --hero-text: #e2e8f0;
-    --hero-overlay: rgba(13, 27, 42, 0.82);
+    --hero-overlay: rgba(13, 27, 42, 0.85); /* Darker for Dark Mode */
+    --hero-brightness: brightness(0.7); /* Darker for reading */
     
     /* Scoped Heading Tokens */
     --heading-color: #ffffff;
@@ -64,40 +66,62 @@ body.dark-mode {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Global Premium Button Interactions */
+/* Global Premium Button Interactions Refinement */
 #services-quote-btn,
 .cta-banner-2 .btn-dark,
 .cta-banner-2 .btn-outline-light {
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative; /* Stability */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 700 !important;
     letter-spacing: 0.5px;
     z-index: 10;
 }
 
-#services-quote-btn:hover,
-.cta-banner-2 .btn-dark:hover,
-.cta-banner-2 .btn-outline-light:hover {
-    background-color: #ffffff !important;
-    color: var(--secondary) !important;
-    border-color: #ffffff !important;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35) !important;
-    transform: scale(1.06) translateY(-10px);
+@media (hover: hover) {
+    #services-quote-btn:hover,
+    .cta-banner-2 .btn-dark:hover,
+    .cta-banner-2 .btn-outline-light:hover {
+        background-color: #ffffff !important;
+        color: var(--secondary) !important;
+        border-color: #ffffff !important;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25) !important;
+        transform: translateY(-5px);
+    }
 }
 
-/* Services Page Special Case - Navy Hover */
-#services-quote-btn:hover {
-    background-color: var(--primary) !important;
-    color: #ffffff !important;
-    border-color: var(--primary) !important;
+/* Services Page - Navy Hover Context */
+@media (hover: hover) {
+    #services-quote-btn:hover {
+        background-color: var(--primary) !important;
+        color: #ffffff !important;
+        border-color: var(--primary) !important;
+        box-shadow: 0 15px 30px rgba(13, 27, 42, 0.3) !important;
+    }
 }
 
+/* Responsive Touch/Active Feedback (Mobile & Desktop) */
 #services-quote-btn:active,
 .cta-banner-2 .btn-dark:active,
 .cta-banner-2 .btn-outline-light:active {
-    transform: scale(0.96) translateY(-2px) !important;
+    transform: translateY(-1px) scale(0.97) !important;
     transition: all 0.1s ease !important;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* CTA Banner 2 specifically needs consistent sizing */
+.cta-banner-2 .btn {
+    min-width: 220px;
+    height: 54px;
+}
+
+@media (max-width: 575px) {
+    .cta-banner-2 .btn {
+        width: 100% !important;
+        min-width: 0;
+    }
 }
 
 body {
@@ -280,18 +304,18 @@ body.menu-open {
 @media (max-width: 1199px) {
     .navbar-collapse {
         position: fixed;
-        top: 70px;
+        top: 65px; /* Slightly tighter */
         left: 0;
         width: 100%;
-        height: calc(100vh - 70px);
-        background-color: var(--header-bg);
-        backdrop-filter: blur(15px);
+        height: calc(100vh - 65px);
+        background-color: var(--body-bg) !important; /* Fully opaque body bg */
+        backdrop-filter: none; /* Remove blur to keep it solid */
         z-index: 9999;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding: 40px 20px;
+        justify-content: flex-start; /* Pull items up */
+        padding: 30px 20px 60px; /* Reduced top, added more bottom for scrolling */
         overflow-y: auto !important;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         border-top: 1px solid var(--border-color);
@@ -385,7 +409,7 @@ body.menu-open {
 }
 
 body.dark-mode .navbar-collapse {
-    background-color: rgba(15, 23, 42, 0.98);
+    background-color: var(--body-bg) !important; /* Fully opaque dark bg */
 }
 
 body.dark-mode .custom-toggler {
@@ -460,16 +484,18 @@ body.dark-mode .custom-toggler {
     border-color: var(--secondary);
     color: #ffffff;
 }
-.cta-primary-btn:hover {
-    background-color: #ffffff;
-    border-color: #ffffff;
-    color: var(--secondary);
-    transform: translateY(-4px) scale(1.04);
-    box-shadow: 0 16px 40px rgba(255, 107, 53, 0.4);
+@media (hover: hover) {
+    .cta-primary-btn:hover {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+        color: var(--secondary) !important;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
+    }
 }
 .cta-primary-btn:active {
-    transform: translateY(-1px) scale(0.97);
-    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.3);
+    transform: translateY(-1px) scale(0.97) !important;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2) !important;
 }
 
 /* Outline — white border */
@@ -478,15 +504,17 @@ body.dark-mode .custom-toggler {
     border: 2px solid rgba(255, 255, 255, 0.75);
     color: #ffffff;
 }
-.cta-outline-btn:hover {
-    background-color: #ffffff;
-    border-color: #ffffff;
-    color: var(--primary);
-    transform: translateY(-4px) scale(1.04);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+@media (hover: hover) {
+    .cta-outline-btn:hover {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+        color: var(--primary) !important;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+    }
 }
 .cta-outline-btn:active {
-    transform: translateY(-1px) scale(0.97);
+    transform: translateY(-1px) scale(0.97) !important;
 }
 
 /* Mobile: full-width buttons stacked */
@@ -512,6 +540,21 @@ body.dark-mode .custom-toggler {
     background-position: center;
     background-attachment: fixed;
     color: var(--hero-text);
+    transition: var(--transition); /* For background-image fade */
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: var(--hero-brightness);
+    z-index: 1;
+    transition: backdrop-filter 0.4s ease;
+    pointer-events: none;
 }
 
 .hero-overlay {
@@ -521,11 +564,13 @@ body.dark-mode .custom-toggler {
     width: 100%;
     height: 100%;
     background: var(--hero-overlay);
+    transition: background 0.4s ease;
+    z-index: 2;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     max-width: 800px;
 }
 
@@ -553,11 +598,43 @@ i.text-secondary {
 .hero-section .btn-outline-light {
     border-color: var(--hero-heading);
     color: var(--hero-heading);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: var(--hero-heading) !important;
+    color: var(--body-bg) !important;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 body.dark-mode .hero-section .btn-outline-light {
     border-color: #ffffff;
     color: #ffffff;
+}
+
+body.dark-mode .hero-section .btn-outline-light:hover {
+    background-color: #ffffff !important;
+    color: #0d1b2a !important; /* var(--primary) in light mode is dark */
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.15);
+}
+
+.hero-section .btn-primary {
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hero-section .btn-primary:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    color: var(--secondary) !important;
+    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.3);
+}
+
+body.dark-mode .hero-section .btn-primary:hover {
+    background-color: #ffffff !important;
+    color: var(--secondary) !important;
+    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
 }
 
 .btn {
@@ -749,9 +826,23 @@ section {
     font-weight: 700;
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Reduced movement for snappiness */
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+
 .fade-in.appear {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (hover: hover) {
+    .hero-content:hover {
+        transform: scale(1.01);
+        transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
 }
 
 /* Footer */
@@ -1342,7 +1433,7 @@ section.bg-dark span:not(.section-tag) {
     display: block !important;
     opacity: 1 !important;
     pointer-events: auto !important;
-    animation: dashboardFadeIn 0.35s ease-out forwards;
+    animation: dashboardFadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards; /* Faster entry */
 }
 
 /* Ensure all fade-in children inside active sections are immediately visible */
@@ -1356,12 +1447,23 @@ section.bg-dark span:not(.section-tag) {
 @keyframes dashboardFadeIn {
     from { 
         opacity: 0; 
-        transform: translateY(15px); 
+        transform: translateY(10px); /* Reduced movement */
     }
     to { 
         opacity: 1; 
         transform: translateY(0); 
     }
+}
+
+/* Instant Dashboard Header Text - Avoid slow theme transitions */
+.main-content header h2, 
+.main-content header h4, 
+.main-content header span, 
+.main-content header strong,
+.main-content header .btn,
+.main-content header .rtl-toggle,
+.main-content header .theme-switch {
+    transition: none !important;
 }
 
 /* Industry Standards / Reliability Section Fix */
@@ -1522,6 +1624,15 @@ body.dark-mode .sidebar-filters .nav-link {
     .filter-dropdown {
         margin-top: 20px;
     }
+    .sidebar-filters .nav-link {
+        text-align: center !important;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sidebar-widget .text-heading {
+        text-align: center;
+    }
 }
 
 /* Dropdown Contrast Improvement for Light Mode */
@@ -1564,3 +1675,101 @@ body.dark-mode .filter-dropdown .dropdown-menu {
     background-color: #1e293b !important;
 }
 
+
+/* ==========================================================================
+   FINAL FORCED VISIBILITY FIX - HERO SECTION BUTTONS
+   ========================================================================== */
+@media (hover: hover) {
+    .hero-section .btn-outline-light:hover,
+    .hero-section .btn-outline-light:focus,
+    body.dark-mode .hero-section .btn-outline-light:hover,
+    body.dark-mode .hero-section .btn-outline-light:focus {
+        background-color: #ffffff !important;
+        color: #0d1b2a !important;
+        border-color: #ffffff !important;
+        box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2) !important;
+        transform: translateY(-5px) !important;
+    }
+
+    .hero-section .btn-primary:hover,
+    .hero-section .btn-primary:focus,
+    body.dark-mode .hero-section .btn-primary:hover,
+    body.dark-mode .hero-section .btn-primary:focus {
+        background-color: #ffffff !important;
+        color: var(--secondary) !important;
+        border-color: #ffffff !important;
+        box-shadow: 0 15px 35px rgba(255, 107, 53, 0.3) !important;
+        transform: translateY(-5px) !important;
+    }
+}
+
+.hero-section .btn:active {
+    transform: translateY(-1px) scale(0.97) !important;
+    transition: all 0.1s ease !important;
+}
+
+/* Desktop Layout Balancing - Contact Form */
+@media (min-width: 992px) {
+    .project-textarea {
+        min-height: 260px !important;
+    }
+}
+
+/* Quote Result Card - Theme Aware */
+#quote-result.quote-result-card {
+    background-color: #ffffff !important;
+    color: #0d1b2a !important;
+    border-left: 5px solid var(--secondary) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+    display: none;
+    transition: var(--transition);
+}
+
+body.dark-mode #quote-result.quote-result-card {
+    background-color: #0d1b2a !important; /* Proper deep dark for dark mode */
+    color: #ffffff !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+}
+
+.price-display {
+    color: var(--secondary) !important;
+}
+
+/* Footer Tablet Specific Fix */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .footer-bottom .col-md-4 {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        margin-bottom: 5px;
+    }
+    .footer-bottom p {
+        white-space: nowrap !important;
+        display: inline-block;
+    }
+}
+
+/* Headquarters Card Tablet Centering */
+@media (min-width: 768px) and (max-width: 991px) {
+    .headquarters-card {
+        text-align: center !important;
+    }
+    .headquarters-card .d-flex {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .headquarters-card .ms-4 {
+        margin-left: 0 !important;
+        margin-top: 15px !important;
+        text-align: center !important;
+    }
+    .headquarters-card .social-icons-wrapper {
+        justify-content: center !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .headquarters-card i {
+        margin-bottom: 5px;
+    }
+}

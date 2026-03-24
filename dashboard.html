@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .dashboard-content { background-color: var(--body-bg); color: var(--body-text); min-height: 100vh; transition: var(--transition); }
-        .quote-result-card { border-left: 5px solid var(--secondary); display: none; }
         .order-status-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
         .status-processing { background-color: rgba(255, 107, 53, 0.1); color: var(--secondary); }
         .status-completed { background-color: rgba(46, 204, 113, 0.1); color: #2ecc71; }
@@ -93,28 +92,28 @@
             <!-- Overview Section -->
             <div id="section-overview" class="dashboard-section active">
                 <div class="row g-4 mb-5">
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="custom-card border-0 shadow-sm p-4">
                             <span class="text-secondary small fw-bold">Active Orders</span>
                             <h3 class="mb-0 mt-2">12</h3>
                             <div class="text-success small mt-2">+2 since yesterday</div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="custom-card border-0 shadow-sm p-4">
                             <span class="text-secondary small fw-bold">Total Budget Spent</span>
                             <h3 class="mb-0 mt-2">$4,250</h3>
-                            <div class="text-secondary small mt-2">FY 2026 Quarter 1</div>
+                            <div class="text-secondary small mt-2 text-nowrap">FY 2026 Q1</div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="custom-card border-0 shadow-sm p-4">
                             <span class="text-secondary small fw-bold">Pending Quotes</span>
                             <h3 class="mb-0 mt-2">3</h3>
                             <div class="text-warning small mt-2">Action required</div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="custom-card border-0 shadow-sm p-4">
                             <span class="text-secondary small fw-bold">Finished Parts</span>
                             <h3 class="mb-0 mt-2">48</h3>
@@ -170,7 +169,7 @@
                             <h5 class="mb-4">Quick Quote</h5>
                             <p class="small text-secondary">Upload a new CAD file to get an instant pricing estimate.</p>
                             <div class="border border-dashed p-5 text-center rounded-4 cursor-pointer mb-4" id="upload-trigger">
-                                <i class="fas fa-cloud-upload-alt fa-3x text-secondary mb-3"></i>
+                                <i class="fas fa-cloud-upload-alt fa-3x mb-3" style="color: var(--secondary) !important;"></i>
                                 <p class="mb-0 small fw-bold">Drag & Drop .STL or .STEP</p>
                             </div>
                             <button class="btn btn-primary w-100" id="btn-upload-direct">New Project</button>
@@ -210,7 +209,7 @@
                             <div class="mb-4">
                                 <label class="form-label">Upload 3D Model</label>
                                 <div class="p-5 border border-dashed rounded-4 text-center custom-form-field" style="border-style: dashed !important; border-width: 2px !important;">
-                                    <i class="fas fa-file-medical fa-3x text-secondary mb-3"></i>
+                                    <i class="fas fa-file-medical fa-3x mb-3" style="color: var(--secondary) !important;"></i>
                                     <p class="mb-0">Click to upload your model</p>
                                     <input type="file" class="d-none" id="file-input">
                                 </div>
@@ -218,10 +217,10 @@
                             <button class="btn btn-primary btn-lg w-100 py-3 mt-4" id="calculate-quote">Get Instant Price</button>
                             
                             <!-- Quote Result (Hidden) -->
-                            <div class="quote-result-card p-4 mt-5 bg-dark text-white rounded-4 shadow-lg text-center" id="quote-result">
-                                <h2 class="text-secondary">$ <span id="quote-price">0.00</span></h2>
+                            <div class="quote-result-card p-4 mt-5 rounded-4 shadow-lg text-center" id="quote-result">
+                                <h2 class="price-display fw-bold mb-2">$ <span id="quote-price">0.00</span></h2>
                                 <p class="mb-3 opacity-75">Estimated Production Price (Excluding Shipping)</p>
-                                <button class="btn btn-outline-light btn-sm mt-3">Confirm & Add to Cart</button>
+                                <button class="btn btn-primary btn-sm mt-3">Confirm & Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -233,9 +232,13 @@
                 <div class="custom-card p-5">
                     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
                         <h3 class="mb-0">Full Order History</h3>
-                        <div class="d-flex flex-wrap gap-2">
-                            <button class="btn btn-outline-secondary btn-sm flex-grow-1 flex-md-grow-0">Export CSV</button>
-                            <input type="text" class="form-control form-control-sm custom-form-field flex-grow-1" style="min-width: 150px; max-width: 200px;" placeholder="Search orders...">
+                        <div class="row g-2 w-100 w-md-auto m-0">
+                            <div class="col-6 col-md-auto p-0 pe-1">
+                                <button class="btn btn-outline-secondary btn-sm w-100">Export CSV</button>
+                            </div>
+                            <div class="col-6 col-md-auto p-0 ps-1">
+                                <input type="text" class="form-control form-control-sm custom-form-field w-100" style="min-width: 150px;" placeholder="Search orders...">
+                            </div>
                         </div>
                     </div>
                     <div class="table-responsive">
