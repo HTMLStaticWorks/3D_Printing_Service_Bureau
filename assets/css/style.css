@@ -614,9 +614,10 @@ body.dark-mode .hero-section .btn-outline-light {
 }
 
 body.dark-mode .hero-section .btn-outline-light:hover {
-    background-color: #ffffff !important;
-    color: #0d1b2a !important; /* var(--primary) in light mode is dark */
-    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.15);
+    background-color: var(--secondary) !important;
+    color: #ffffff !important;
+    border-color: var(--secondary) !important;
+    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
 }
 
 .hero-section .btn-primary {
@@ -1684,10 +1685,10 @@ body.dark-mode .filter-dropdown .dropdown-menu {
     .hero-section .btn-outline-light:focus,
     body.dark-mode .hero-section .btn-outline-light:hover,
     body.dark-mode .hero-section .btn-outline-light:focus {
-        background-color: #ffffff !important;
-        color: #0d1b2a !important;
-        border-color: #ffffff !important;
-        box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2) !important;
+        background-color: var(--secondary) !important;
+        color: #ffffff !important;
+        border-color: var(--secondary) !important;
+        box-shadow: 0 15px 35px rgba(255, 107, 53, 0.45) !important;
         transform: translateY(-5px) !important;
     }
 

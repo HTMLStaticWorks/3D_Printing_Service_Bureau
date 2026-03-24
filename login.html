@@ -21,6 +21,7 @@
             align-items: center;
         }
         .auth-card {
+            position: relative; /* Added for inner positioning */
             background-color: var(--body-bg);
             color: var(--body-text);
             padding: 40px;
@@ -138,10 +139,10 @@
             }
             .auth-header h2 { font-size: 1.5rem; }
             #theme-toggle {
-                top: 20px !important;
-                right: 20px !important;
-                width: 42px !important;
-                height: 42px !important;
+                top: 12px !important;
+                right: 12px !important;
+                width: 38px !important;
+                height: 38px !important;
                 padding: 0 !important;
             }
         }
@@ -153,11 +154,11 @@
 </head>
 <body>
 
-    <button class="theme-switch shadow" id="theme-toggle" style="position: absolute; top: 20px; right: 20px; z-index: 1000; background: var(--card-bg) !important;">
-        <i class="fas fa-moon"></i>
-    </button>
-
     <div class="auth-card fade-in appear">
+        <button class="theme-switch shadow-sm" id="theme-toggle" style="position: absolute; top: 15px; right: 15px; z-index: 1000; background: var(--card-bg) !important; margin: 0;">
+            <i class="fas fa-moon"></i>
+        </button>
+
         <a class="brand-logo-container" href="index.html" style="justify-content: center; margin-bottom: 25px;">
             <i class="fas fa-cube brand-logo-icon"></i>
             <span class="brand-name">PRECISION 3D</span>
