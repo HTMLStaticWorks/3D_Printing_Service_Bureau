@@ -14,8 +14,8 @@
         .dashboard-content { background-color: var(--body-bg); color: var(--body-text); min-height: 100vh; transition: var(--transition); }
         .order-status-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
         .status-processing { background-color: rgba(255, 107, 53, 0.1); color: var(--secondary); }
-        .status-completed { background-color: rgba(46, 204, 113, 0.1); color: #2ecc71; }
-        .status-shipping { background-color: rgba(52, 152, 219, 0.1); color: #3498db; }
+        .status-completed { background-color: rgba(13, 27, 42, 0.1); color: var(--primary); }
+        .status-shipping { background-color: rgba(65, 90, 119, 0.1); color: var(--accent); }
     </style>
     <!-- Favicon -->
     
@@ -52,7 +52,7 @@
                     <span>Settings</span>
                 </div>
                 <div class="mt-auto pt-5">
-                    <a href="login.html" class="sidebar-item text-white-50 text-decoration-none">
+                    <a href="index.html" class="sidebar-item text-white text-decoration-none">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
                     </a>
@@ -78,9 +78,10 @@
                             <li><a class="dropdown-item" href="#">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Billing</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="login.html">Sign Out</a></li>
+                            <li><a class="dropdown-item" href="index.html">Sign Out</a></li>
                         </ul>
                     </div>
+                    <button class="rtl-toggle me-2" id="rtl-toggle">RTL</button>
                     <button class="theme-switch" id="theme-toggle">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -96,7 +97,7 @@
                         <div class="custom-card border-0 shadow-sm p-4">
                             <span class="text-secondary small fw-bold">Active Orders</span>
                             <h3 class="mb-0 mt-2">12</h3>
-                            <div class="text-success small mt-2">+2 since yesterday</div>
+                            <div class="text-secondary small mt-2">+2 since yesterday</div>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3">
@@ -110,14 +111,14 @@
                         <div class="custom-card border-0 shadow-sm p-4">
                             <span class="text-secondary small fw-bold">Pending Quotes</span>
                             <h3 class="mb-0 mt-2">3</h3>
-                            <div class="text-warning small mt-2">Action required</div>
+                            <div class="text-secondary small mt-2">Action required</div>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3">
                         <div class="custom-card border-0 shadow-sm p-4">
                             <span class="text-secondary small fw-bold">Finished Parts</span>
                             <h3 class="mb-0 mt-2">48</h3>
-                            <div class="text-success small mt-2">+12 this month</div>
+                            <div class="text-secondary small mt-2">+12 this month</div>
                         </div>
                     </div>
                 </div>
@@ -141,21 +142,21 @@
                                         <tr>
                                             <td><i class="fas fa-file-invoice me-2 text-secondary"></i> Turbine_Blade_V2.stl</td>
                                             <td>Titanium Grade 5</td>
-                                            <td><span class="badge bg-secondary bg-opacity-10 text-secondary rounded-pill px-3 py-2 fw-bold border border-secondary">Processing</span></td>
+                                            <td><span class="badge status-processing rounded-pill px-3 py-2 fw-bold border border-secondary border-opacity-25">Processing</span></td>
                                             <td>Mar 25, 2026</td>
                                             <td><button class="btn btn-sm btn-link text-secondary"><i class="fas fa-ellipsis-h"></i></button></td>
                                         </tr>
                                         <tr>
                                             <td><i class="fas fa-file-invoice me-2 text-secondary"></i> Housing_Gasket.step</td>
                                             <td>SLA Rigid Resin</td>
-                                            <td><span class="badge bg-secondary bg-opacity-10 text-secondary rounded-pill px-3 py-2 fw-bold border border-secondary">Shipping</span></td>
+                                            <td><span class="badge status-shipping rounded-pill px-3 py-2 fw-bold border border-accent border-opacity-25">Shipping</span></td>
                                             <td>Mar 24, 2026</td>
                                             <td><button class="btn btn-sm btn-link text-secondary"><i class="fas fa-ellipsis-h"></i></button></td>
                                         </tr>
                                         <tr>
                                             <td><i class="fas fa-file-invoice me-2 text-secondary"></i> Mounting_Bracket.stl</td>
                                             <td>SLS Nylon 12</td>
-                                            <td><span class="badge bg-secondary bg-opacity-10 text-secondary rounded-pill px-3 py-2 fw-bold border border-secondary">Completed</span></td>
+                                            <td><span class="badge status-completed rounded-pill px-3 py-2 fw-bold border border-primary border-opacity-25">Completed</span></td>
                                             <td>Mar 20, 2026</td>
                                             <td><button class="btn btn-sm btn-link text-secondary"><i class="fas fa-ellipsis-h"></i></button></td>
                                         </tr>
@@ -219,7 +220,7 @@
                             <!-- Quote Result (Hidden) -->
                             <div class="quote-result-card p-4 mt-5 rounded-4 shadow-lg text-center" id="quote-result">
                                 <h2 class="price-display fw-bold mb-2">$ <span id="quote-price">0.00</span></h2>
-                                <p class="mb-3 opacity-75">Estimated Production Price (Excluding Shipping)</p>
+                                <p class="mb-3 opacity-100">Estimated Production Price (Excluding Shipping)</p>
                                 <button class="btn btn-primary btn-sm mt-3">Confirm & Add to Cart</button>
                             </div>
                         </div>

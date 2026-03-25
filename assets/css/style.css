@@ -27,9 +27,9 @@
     
     /* Hero Section Tokens */
     --hero-heading: #0f172a;
-    --hero-text: #1b263b;
-    --hero-overlay: rgba(255, 255, 255, 0.5); /* Lighter for Light Mode */
-    --hero-brightness: brightness(1.15); /* Slightly brighter */
+    --hero-text: #222222; /* High contrast: #222 instead of light gray */
+    --hero-overlay: rgba(255, 255, 255, 0.6); /* Slightly darker light overlay for better contrast */
+    --hero-brightness: brightness(1.0); /* Remove brightness boost to avoid wash-out */
     
     /* Scoped Heading Tokens */
     --heading-color: #0f172a;
@@ -57,6 +57,39 @@ body.dark-mode {
     
     /* Scoped Heading Tokens */
     --heading-color: #ffffff;
+}
+
+/* Base Dark Mode Utility Overrides */
+body.dark-mode .text-secondary {
+    color: #94a3b8 !important; /* Lighter slate for visibility on dark backgrounds */
+}
+
+body.dark-mode .text-muted {
+    color: #64748b !important;
+}
+
+body.dark-mode .text-white-50 {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Global Readability Improvements for Descriptions */
+p:not(.badge p), .lead, .hero-content p, .hero-content .lead {
+    opacity: 1 !important; /* Force full opacity for clarity */
+    filter: none !important; /* Remove any blur effects */
+    text-shadow: none !important; /* Eliminate ghosting/blur in light mode */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body:not(.dark-mode) .lead:not(.text-white), 
+body:not(.dark-mode) p.lead:not(.text-white) {
+    font-weight: 600 !important; /* Bolder for clarity in Light Mode */
+    color: var(--body-text) !important;
+}
+
+body.dark-mode p, 
+body.dark-mode .lead {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow only for Dark Mode contrast */
 }
 
 * {
@@ -555,9 +588,8 @@ body.dark-mode .custom-toggler {
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: var(--hero-brightness);
+    /* NO opacity less than 1 applied to text specifically, and NO blur() */
     z-index: 1;
-    transition: backdrop-filter 0.4s ease;
     pointer-events: none;
 }
 
@@ -576,6 +608,17 @@ body.dark-mode .custom-toggler {
     position: relative;
     z-index: 5;
     max-width: 800px;
+}
+
+.hero-description, 
+.hero-content .lead, 
+.hero-content p {
+    color: var(--hero-text) !important;
+    opacity: 1 !important; /* Ensure NO opacity less than 1 is applied */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Slight text shadow for readability */
+    font-weight: 500; /* Robust font-weight */
+    line-height: 1.6; /* Improved spacing */
+    filter: none !important; /* Remove any filter: blur() */
 }
 
 .hero-title {
@@ -831,16 +874,16 @@ section {
     font-weight: 700;
 }
 
-.fade-in {
+.fade-in, .reveal {
     opacity: 0;
-    transform: translateY(20px); /* Reduced movement for snappiness */
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(10px); /* Reduced movement for snappiness and less blur */
+    transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     will-change: opacity, transform;
 }
 
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
+.fade-in.appear, .reveal.appear {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 @media (hover: hover) {
@@ -853,10 +896,19 @@ section {
 /* Footer */
 footer {
     background-color: var(--footer-bg);
-    color: var(--body-text);
     padding: 80px 0 20px;
     border-top: 1px solid var(--border-color);
     transition: var(--transition);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+footer p, 
+footer .text-secondary {
+    color: var(--body-text) !important;
+    opacity: 1 !important;
+    font-weight: 450; /* Slightly more than normal but not bold */
+    filter: none !important;
 }
 
 .footer-logo {
@@ -927,16 +979,18 @@ footer {
 }
 
 .footer-links a {
-    color: var(--body-text);
-    opacity: 0.7;
+    color: var(--body-text) !important;
+    opacity: 0.8 !important;
     text-decoration: none;
     transition: var(--transition);
+    display: inline-block;
 }
 
 .footer-links a:hover {
-    color: var(--secondary);
-    opacity: 1;
-    padding-left: 5px;
+    color: var(--secondary) !important;
+    opacity: 1 !important;
+    padding-left: 10px;
+    font-weight: 600;
 }
 
 /* Compact Footer Bottom */
@@ -975,30 +1029,36 @@ footer {
     box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
 }
 
-/* RTL Toggle Button */
-.rtl-toggle {
+/* RTL & Theme Toggle Buttons */
+.rtl-toggle, .theme-switch {
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--heading-color);
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 700;
+    padding: 0 15px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
     transition: var(--transition);
     cursor: pointer;
     text-transform: uppercase;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    height: 42px;
     min-width: 42px;
-    height: 34px;
     line-height: 1;
 }
 
-.rtl-toggle:hover {
+.rtl-toggle:hover, .theme-switch:hover {
     background-color: var(--secondary);
-    color: white;
+    color: white !important;
     border-color: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+}
+
+body.dark-mode .rtl-toggle, body.dark-mode .theme-switch {
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 /* RTL Global Adjustments */
@@ -1065,37 +1125,13 @@ body.rtl-mode .footer-social-icons {
     border-color: var(--secondary);
 }
 
-/* Toggle Switches (Theme & RTL) */
+/* Toggle Switches Override for better spacing */
 .theme-switch, #rtl-toggle {
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--heading-color);
-    padding: 0 12px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 42px; /* Matched to .header-btn for perfect alignment */
-    transition: var(--transition);
-    text-decoration: none !important;
-    margin-left: 10px; /* Added margin for safe spacing */
-}
-
-.theme-switch {
-    min-width: 42px;
+    margin-left: 8px;
 }
 
 #rtl-toggle {
     min-width: 55px;
-    font-weight: 600;
-}
-
-.theme-switch:hover, #rtl-toggle:hover {
-    background-color: var(--secondary);
-    color: white;
-    border-color: var(--secondary);
 }
 
 /* Login/Signup Specific */
@@ -1705,7 +1741,11 @@ body.dark-mode .filter-dropdown .btn-outline-secondary {
 /* Sidebar Stacking Context Fixes */
 .sidebar-widget {
     position: relative;
-    background-color: transparent !important;
+    padding: 25px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
 .filter-dropdown .dropdown-menu {
@@ -1820,4 +1860,42 @@ body.dark-mode #quote-result.quote-result-card {
     .headquarters-card i {
         margin-bottom: 5px;
     }
+}
+
+/* Pricing FAQ Accordion Customization */
+.custom-accordion .accordion-item {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    transition: var(--transition);
+}
+
+.custom-accordion .accordion-button {
+    background-color: transparent !important;
+    color: var(--body-text) !important;
+    box-shadow: none !important;
+    transition: var(--transition);
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--secondary) !important;
+    background-color: transparent !important;
+}
+
+.custom-accordion .accordion-button:focus {
+    box-shadow: none !important;
+}
+
+body.dark-mode .custom-accordion .accordion-button::after {
+    filter: invert(1) brightness(2); /* Make chevron white in dark mode */
+}
+
+.custom-accordion .accordion-body {
+    color: var(--body-text) !important; /* Force high visibility */
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.custom-accordion .accordion-item:hover {
+    border-color: var(--secondary) !important;
+    transform: translateY(-2px);
 }

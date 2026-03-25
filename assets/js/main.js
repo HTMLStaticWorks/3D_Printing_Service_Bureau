@@ -117,8 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(el => observer.observe(el));
+    const animateElements = document.querySelectorAll('.fade-in, .reveal');
+    animateElements.forEach(el => observer.observe(el));
 
     // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

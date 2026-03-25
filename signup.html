@@ -166,10 +166,18 @@
             .text-center.mt-2 { margin-top: 1rem !important; }
             #theme-toggle {
                 top: 10px !important;
+                right: 60px !important;
+                width: 36px !important;
+                height: 36px !important;
+                padding: 0 !important;
+            }
+            #rtl-toggle {
+                top: 10px !important;
                 right: 10px !important;
                 width: 36px !important;
                 height: 36px !important;
                 padding: 0 !important;
+                font-size: 0.65rem !important;
             }
         }
     </style>
@@ -181,11 +189,12 @@
 <body>
 
     <div class="auth-card fade-in appear">
-        <button class="theme-switch shadow-sm" id="theme-toggle" style="position: absolute; top: 15px; right: 15px; z-index: 1000; background: var(--card-bg) !important; margin: 0;">
+        <button class="rtl-toggle shadow-sm" id="rtl-toggle" style="position: absolute; top: 15px; right: 15px; z-index: 1000; background: var(--card-bg) !important; margin: 0;">RTL</button>
+        <button class="theme-switch shadow-sm" id="theme-toggle" style="position: absolute; top: 15px; right: 75px; z-index: 1000; background: var(--card-bg) !important; margin: 0;">
             <i class="fas fa-moon"></i>
         </button>
 
-        <a class="brand-logo-container" href="index.html" style="justify-content: center; margin-bottom: 25px;">
+        <a class="brand-logo-container" href="index.html" style="justify-content: center; margin-bottom: 25px; margin-top: 50px;">
             <i class="fas fa-cube brand-logo-icon"></i>
             <span class="brand-name">PRECISION 3D</span>
         </a>
