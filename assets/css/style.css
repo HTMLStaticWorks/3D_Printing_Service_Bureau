@@ -347,47 +347,75 @@ body.menu-open {
 /* Updated to match navbar-expand-xl breakpoint: hamburger at <1200px */
 @media (max-width: 1199px) {
     .navbar-collapse {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        min-height: 100vh;
+        position: fixed !important;
+        top: 0 !important; /* Keep pinned to top */
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
         background-color: var(--body-bg) !important;
-        z-index: 9999;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 100px 20px 60px; /* Space for the floating header elements */
+        z-index: 9999 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 65px 20px 40px !important; /* Minimized padding to match brand height */
         overflow-y: auto !important;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        border-top: none;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-100%); /* Slide from the very top */
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.5s ease-in-out, visibility 0.5s ease !important;
+        border-top: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-100%) !important; /* Initial: hidden above screen */
     }
 
-    .navbar-collapse.show {
+    .navbar-collapse.show,
+    .navbar-collapse.collapsing {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important; /* Slide to active position */
+    }
+
+    /* Specifically handle Bootstrap's toggle state for height during animation */
+    .navbar-collapse.collapsing {
+        height: 100vh !important;
+    }
+
+    /* Staggered entrance for menu items */
+    .navbar-nav .nav-item {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.6s ease !important;
+    }
+
+    .navbar-collapse.show .nav-item {
         opacity: 1;
-        visibility: visible;
         transform: translateY(0);
     }
+
+    .navbar-collapse.show .nav-item:nth-child(1) { transition-delay: 0.1s; }
+    .navbar-collapse.show .nav-item:nth-child(2) { transition-delay: 0.15s; }
+    .navbar-collapse.show .nav-item:nth-child(3) { transition-delay: 0.2s; }
+    .navbar-collapse.show .nav-item:nth-child(4) { transition-delay: 0.25s; }
+    .navbar-collapse.show .nav-item:nth-child(5) { transition-delay: 0.3s; }
+    .navbar-collapse.show .nav-item:nth-child(6) { transition-delay: 0.35s; }
+    .navbar-collapse.show .nav-item:nth-child(7) { transition-delay: 0.4s; }
 
     .navbar-nav {
         width: 100%;
         text-align: center;
+        margin-top: 5px !important; /* Removed extra utility margins */
         margin-bottom: 2rem;
     }
 
     .nav-item {
         width: 100%;
-        margin-bottom: 5px;
+        margin-bottom: 0px; /* Reduced vertical gap */
     }
 
     .nav-link {
         font-size: 1.25rem;
-        padding: 12px 15px !important;
+        padding: 10px 15px !important; /* Slightly tighter padding */
         display: flex !important;
         align-items: center;
         justify-content: center;
@@ -645,7 +673,8 @@ body.dark-mode .hero-title {
 }
 
 /* Global Icon/Highlight Fix */
-i.text-secondary {
+i.text-secondary,
+body.dark-mode i.text-secondary {
     color: var(--secondary) !important;
 }
 
@@ -1890,6 +1919,10 @@ body.dark-mode #quote-result.quote-result-card {
 
 .custom-accordion .accordion-button:focus {
     box-shadow: none !important;
+}
+
+body.dark-mode .custom-accordion .accordion-button i.text-secondary {
+    color: var(--secondary) !important;
 }
 
 body.dark-mode .custom-accordion .accordion-button::after {
