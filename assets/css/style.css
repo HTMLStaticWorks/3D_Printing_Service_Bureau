@@ -325,11 +325,18 @@ body.dark-mode .list-unstyled li {
 }
 
 .custom-toggler:not(.collapsed) i {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
 }
 
 .custom-toggler:not(.collapsed) i::before {
     content: "\f00d"; /* Change to X when open */
+}
+
+@media (max-width: 1199px) {
+    .navbar-brand, .ms-auto.order-lg-3 {
+        position: relative;
+        z-index: 10001; /* Higher than menu */
+    }
 }
 
 /* Fullscreen Mobile Navigation & Scroll Lock */
@@ -341,24 +348,24 @@ body.menu-open {
 @media (max-width: 1199px) {
     .navbar-collapse {
         position: fixed;
-        top: 65px; /* Slightly tighter */
+        top: 0;
         left: 0;
         width: 100%;
-        height: calc(100vh - 65px);
-        background-color: var(--body-bg) !important; /* Fully opaque body bg */
-        backdrop-filter: none; /* Remove blur to keep it solid */
+        height: auto;
+        min-height: 100vh;
+        background-color: var(--body-bg) !important;
         z-index: 9999;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; /* Pull items up */
-        padding: 30px 20px 60px; /* Reduced top, added more bottom for scrolling */
+        justify-content: flex-start;
+        padding: 100px 20px 60px; /* Space for the floating header elements */
         overflow-y: auto !important;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        border-top: 1px solid var(--border-color);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border-top: none;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-10px);
+        transform: translateY(-100%); /* Slide from the very top */
     }
 
     .navbar-collapse.show {
