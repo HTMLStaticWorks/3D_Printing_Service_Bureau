@@ -359,7 +359,7 @@ body.menu-open {
         flex-direction: column !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        padding: 65px 20px 40px !important; /* Minimized padding to match brand height */
+        padding: 55px 20px 40px !important; /* Reduced top padding to start higher */
         overflow-y: auto !important;
         transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.5s ease-in-out, visibility 0.5s ease !important;
         border-top: none !important;
@@ -404,8 +404,10 @@ body.menu-open {
     .navbar-nav {
         width: 100%;
         text-align: center;
-        margin-top: 5px !important; /* Removed extra utility margins */
+        margin-top: 10px !important; /* Slight gap from top */
         margin-bottom: 2rem;
+        justify-content: flex-start !important; /* Ensure items start from top */
+        flex-grow: 0 !important; /* Prevent filling the entire screen height */
     }
 
     .nav-item {
