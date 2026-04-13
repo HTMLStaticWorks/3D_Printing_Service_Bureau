@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="row g-4">
-                    <div class="col-lg-8">
+                    <div class="col-xl-8">
                         <div class="custom-card p-4">
                             <h5 class="mb-4">Recent Projects</h5>
                             <div class="table-responsive">
@@ -165,7 +165,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 col-lg-4 mx-auto">
+                    <div class="col-md-8 col-xl-4 mx-auto">
                         <div class="custom-card p-4 h-100 text-center">
                             <h5 class="mb-4">Quick Quote</h5>
                             <p class="small text-secondary">Upload a new CAD file to get an instant pricing estimate.</p>
@@ -231,16 +231,16 @@
             <!-- Orders Section -->
             <div id="section-orders" class="dashboard-section d-none">
                 <div class="custom-card p-5">
-                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
-                        <h3 class="mb-0">Full Order History</h3>
-                        <div class="row g-2 w-100 w-md-auto m-0">
-                            <div class="col-7 col-md-auto p-0 pe-1">
-                                <button class="btn btn-outline-secondary btn-sm w-100">Export CSV</button>
+                    <div class="d-flex flex-row flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                        <h3 class="mb-0 text-nowrap">Full Order History</h3>
+                        <div class="row g-2 w-auto m-0 flex-nowrap align-items-center">
+                            <div class="col-auto p-0 pe-2">
+                                <button class="btn btn-outline-secondary btn-sm">Export CSV</button>
                             </div>
-                            <div class="col-5 col-md-auto p-0 ps-1">
+                            <div class="col-auto p-0">
                                 <div class="search-input-wrapper">
                                     <i class="fas fa-search search-icon"></i>
-                                    <input type="text" class="form-control form-control-sm custom-form-field order-search-input w-100" placeholder="Search orders...">
+                                    <input type="text" class="form-control form-control-sm custom-form-field order-search-input" style="width: 150px;" placeholder="Search...">
                                 </div>
                             </div>
                         </div>
@@ -272,6 +272,30 @@
                                     <td>Camera_Mount_Gimbal</td>
                                     <td>Nylon SLS</td>
                                     <td class="text-nowrap">$120.00</td>
+                                    <td><button class="btn btn-sm btn-outline-secondary cta-btn-hover">Invoice</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-nowrap">#ORD-7592</td>
+                                    <td class="text-nowrap">Nov 15, 2025</td>
+                                    <td>Turbine_Blade_v4</td>
+                                    <td>Inconel 718 SLM</td>
+                                    <td class="text-nowrap">$1,850.00</td>
+                                    <td><button class="btn btn-sm btn-outline-secondary cta-btn-hover">Invoice</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-nowrap">#ORD-7431</td>
+                                    <td class="text-nowrap">Oct 30, 2025</td>
+                                    <td>Dashboard_Bezel_Final</td>
+                                    <td>Grey Resin SLA</td>
+                                    <td class="text-nowrap">$85.50</td>
+                                    <td><button class="btn btn-sm btn-outline-secondary cta-btn-hover">Invoice</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-nowrap">#ORD-7210</td>
+                                    <td class="text-nowrap">Sep 12, 2025</td>
+                                    <td>Heat_Exchanger_Core</td>
+                                    <td>Aluminum AlSi10Mg</td>
+                                    <td class="text-nowrap">$420.00</td>
                                     <td><button class="btn btn-sm btn-outline-secondary cta-btn-hover">Invoice</button></td>
                                 </tr>
                             </tbody>

@@ -140,6 +140,14 @@ body, header, section, footer, div, span, p, a, button, input, select, .custom-c
 .cta-banner-2 .btn {
     min-width: 220px;
     height: 54px;
+    border: 2px solid #ffffff !important; /* Ensure visibility on orange bg */
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+.cta-banner-2 .btn:hover {
+    background-color: #ffffff !important;
+    color: var(--secondary) !important;
 }
 
 @media (max-width: 575px) {
@@ -255,7 +263,6 @@ body.dark-mode.auth-page {
     -webkit-backdrop-filter: blur(15px);
     transition: var(--transition);
     padding: 1rem 0;
-    border-bottom: 2px solid var(--secondary); /* Enhanced Orange Border */
     z-index: 1000;
 }
 
@@ -380,7 +387,7 @@ body.menu-open {
         justify-content: flex-start !important;
         padding: 55px 20px 40px !important; /* Reduced top padding to start higher */
         overflow-y: auto !important;
-        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.5s ease-in-out, visibility 0.5s ease !important;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease-in-out, visibility 0.3s ease !important;
         border-top: none !important;
         opacity: 0 !important;
         visibility: hidden !important;
@@ -403,8 +410,8 @@ body.menu-open {
     /* Staggered entrance for menu items */
     .navbar-nav .nav-item {
         opacity: 0;
-        transform: translateY(-20px);
-        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.6s ease !important;
+        transform: translateY(-10px);
+        transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.35s ease !important;
     }
 
     .navbar-collapse.show .nav-item {
@@ -412,13 +419,13 @@ body.menu-open {
         transform: translateY(0);
     }
 
-    .navbar-collapse.show .nav-item:nth-child(1) { transition-delay: 0.1s; }
-    .navbar-collapse.show .nav-item:nth-child(2) { transition-delay: 0.15s; }
-    .navbar-collapse.show .nav-item:nth-child(3) { transition-delay: 0.2s; }
-    .navbar-collapse.show .nav-item:nth-child(4) { transition-delay: 0.25s; }
-    .navbar-collapse.show .nav-item:nth-child(5) { transition-delay: 0.3s; }
-    .navbar-collapse.show .nav-item:nth-child(6) { transition-delay: 0.35s; }
-    .navbar-collapse.show .nav-item:nth-child(7) { transition-delay: 0.4s; }
+    .navbar-collapse.show .nav-item:nth-child(1) { transition-delay: 0.05s; }
+    .navbar-collapse.show .nav-item:nth-child(2) { transition-delay: 0.1s; }
+    .navbar-collapse.show .nav-item:nth-child(3) { transition-delay: 0.15s; }
+    .navbar-collapse.show .nav-item:nth-child(4) { transition-delay: 0.2s; }
+    .navbar-collapse.show .nav-item:nth-child(5) { transition-delay: 0.25s; }
+    .navbar-collapse.show .nav-item:nth-child(6) { transition-delay: 0.3s; }
+    .navbar-collapse.show .nav-item:nth-child(7) { transition-delay: 0.35s; }
 
     .navbar-nav {
         width: 100%;
@@ -767,6 +774,12 @@ button[type="submit"]:not(.btn-social-circle):hover {
     transform: translateY(-1px) scale(0.98);
 }
 
+/* Global Utility Overrides */
+.bg-secondary {
+    background-color: var(--secondary) !important;
+    color: #ffffff !important;
+}
+
 /* Secondary Buttons - Orange Outline, White Text */
 .btn-outline-primary,
 .btn-outline-light,
@@ -774,7 +787,7 @@ button[type="submit"]:not(.btn-social-circle):hover {
 .header-btn.btn-outline-primary,
 .btn-outline-secondary,
 .btn-outline-white {
-    background-color: rgba(13, 27, 42, 0.25) !important; /* Semi-transparent dark for white text contrast */
+    background-color: rgba(13, 27, 42, 0.7) !important; /* Increased opacity for better text contrast */
     border: 2px solid var(--secondary) !important;
     color: #ffffff !important;
     backdrop-filter: blur(5px);
@@ -964,7 +977,7 @@ section {
 .fade-in, .reveal {
     opacity: 0;
     transform: translateY(10px); /* Reduced movement for snappiness and less blur */
-    transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     will-change: opacity, transform;
 }
 
@@ -1137,9 +1150,9 @@ footer .text-secondary {
 }
 
 .rtl-toggle:hover, .theme-switch:hover {
-    background-color: var(--secondary);
-    color: white !important;
-    border-color: var(--secondary);
+    background-color: var(--secondary) !important;
+    color: #ffffff !important;
+    border-color: var(--secondary) !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
 }
@@ -1264,6 +1277,7 @@ body.rtl-mode .footer-social-icons {
 .dashboard-wrapper {
     display: flex;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .sidebar {
@@ -1329,6 +1343,9 @@ body.rtl-mode .footer-social-icons {
 @media (min-width: 992px) {
     #sidebar-toggle {
         display: none !important;
+    }
+    .main-content {
+        overflow-x: hidden !important;
     }
 }
 
@@ -1989,4 +2006,24 @@ body.dark-mode .custom-accordion .accordion-button::after {
 .custom-accordion .accordion-item:hover {
     border-color: var(--secondary) !important;
     transform: translateY(-2px);
+}
+
+/* Light Mode Pricing Button Visibility Fix */
+body:not(.dark-mode) .btn-outline-primary:not(.header-btn),
+body:not(.dark-mode) .btn-outline-secondary:not(.header-btn) {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+    border-color: var(--primary) !important;
+}
+
+/* Admin Dashboard Table Button Visibility Fix for Light Mode */
+body:not(.dark-mode) .admin-dashboard .table .btn-outline-secondary {
+    background-color: transparent !important;
+    color: var(--body-text) !important;
+    border: 2px solid var(--secondary) !important;
+}
+
+body:not(.dark-mode) .admin-dashboard .table .btn-outline-secondary:hover {
+    background-color: var(--secondary) !important;
+    color: #ffffff !important;
 }

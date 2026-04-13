@@ -53,7 +53,7 @@ new_nav = """    <!-- Header -->
                     </li>
                 </ul>
                 <div class="nav-auth-buttons d-flex mt-4 mt-lg-0 gap-3 ms-lg-3">
-                    <a href="login.html" class="btn btn-outline-primary header-btn">Login</a>
+                    <a href="login.html" class="btn btn-primary header-btn">Login</a>
                     <button class="rtl-toggle" id="rtl-toggle">RTL</button>
                 </div>
             </div>

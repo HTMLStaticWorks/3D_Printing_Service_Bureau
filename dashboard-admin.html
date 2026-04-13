@@ -208,6 +208,26 @@
                                         <td class="text-secondary small">Yesterday</td>
                                         <td><button class="btn btn-sm btn-outline-secondary">Edit</button></td>
                                     </tr>
+                                    <tr>
+                                        <td class="d-flex align-items-center">
+                                            <img src="https://ui-avatars.com/api/?name=MK&background=0d1b2a&color=fff" class="rounded-circle me-3" width="32">
+                                            <span>Michael Kao</span>
+                                        </td>
+                                        <td>Kao Robotics</td>
+                                        <td>Enterprise</td>
+                                        <td class="text-secondary small">5 mins ago</td>
+                                        <td><button class="btn btn-sm btn-outline-secondary">Edit</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="d-flex align-items-center">
+                                            <img src="https://ui-avatars.com/api/?name=EV&background=0d1b2a&color=fff" class="rounded-circle me-3" width="32">
+                                            <span>Elena Vance</span>
+                                        </td>
+                                        <td>Vance Medical</td>
+                                        <td>Client</td>
+                                        <td class="text-secondary small">3 hours ago</td>
+                                        <td><button class="btn btn-sm btn-outline-secondary">Edit</button></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -232,6 +252,43 @@
                                     <div class="mt-3 small text-secondary">Farm load: 88%. No downtime expected.</div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="table-responsive mt-5">
+                            <h6 class="mb-3">Recent Transactions</h6>
+                            <table class="table table-sm align-middle">
+                                <thead class="small text-secondary fw-bold">
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Gateway</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="small">
+                                    <tr>
+                                        <td>#TXN-9921</td>
+                                        <td>Apr 12, 2026</td>
+                                        <td>$4,500.00</td>
+                                        <td>Stripe</td>
+                                        <td><span class="text-success fw-bold">Succeeded</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#TXN-9920</td>
+                                        <td>Apr 11, 2026</td>
+                                        <td>$12,840.00</td>
+                                        <td>Wire Transfer</td>
+                                        <td><span class="text-warning fw-bold">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#TXN-9919</td>
+                                        <td>Apr 11, 2026</td>
+                                        <td>$850.00</td>
+                                        <td>PayPal</td>
+                                        <td><span class="text-success fw-bold">Succeeded</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -274,6 +331,17 @@
                                 <h6 class="mb-1">Material Supply Update</h6>
                                 <p class="small text-secondary mb-0">Titanium Grade 23 Shipment delayed by 2 days.</p>
                             </div>
+                            <div class="list-group-item bg-transparent px-0 border-light border-opacity-10 py-3">
+                                <h6 class="mb-1">Customer Quote Request #1025</h6>
+                                <p class="small text-secondary mb-0">From: Elena Vance | Project: Surgical Guides</p>
+                            </div>
+                            <div class="list-group-item bg-transparent px-0 border-light border-opacity-10 py-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">API Webhook Failure</h6>
+                                    <p class="small text-danger mb-0">Production endpoint 404. Manual check required.</p>
+                                </div>
+                                <span class="badge bg-danger rounded-pill">Urgent</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -304,6 +372,37 @@
                                         </div>
                                     </div>
                                     <button class="btn btn-secondary px-5 cta-btn-hover flex-shrink-0">Save Configuration</button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-5 opacity-10">
+                        <h5 class="mb-4">System Health & API</h5>
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 text-center bg-light bg-opacity-10">
+                                    <div class="small text-secondary mb-1">Server Latency</div>
+                                    <div class="fw-bold text-success">24ms</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 text-center bg-light bg-opacity-10">
+                                    <div class="small text-secondary mb-1">Cloud Storage</div>
+                                    <div class="fw-bold text-primary">68% Used</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 text-center bg-light bg-opacity-10">
+                                    <div class="small text-secondary mb-1">Backup Status</div>
+                                    <div class="fw-bold text-success">Automated - OK</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="form-label small">Live Production API Key</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-sm text-muted bg-light bg-opacity-10 border-light border-opacity-20" value="pk_live_51P3dBureau_2026_IndustrialSecretKey" readonly>
+                                    <button class="btn btn-outline-secondary btn-sm">Copy Key</button>
                                 </div>
                             </div>
                         </div>
