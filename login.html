@@ -34,6 +34,7 @@
             max-width: 480px;
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
             transition: var(--transition);
+            margin: auto; /* Vital for vertical scrolling in flex containers */
         }
 
         .brand-link {
@@ -205,23 +206,39 @@
             .small {
                 font-size: 0.75rem !important;
             }
+        }
 
-            #theme-toggle {
-                top: 12px !important;
-                right: 65px !important;
-                width: 38px !important;
-                height: 38px !important;
-                padding: 0 !important;
-            }
-
-            #rtl-toggle {
-                top: 12px !important;
-                right: 12px !important;
-                width: 38px !important;
-                height: 38px !important;
-                padding: 0 !important;
-                font-size: 0.7rem !important;
-            }
+        /* Toggles Visibility Fix - Moved inside card */
+        .auth-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 1001;
+        }
+        .auth-controls .rtl-toggle, 
+        .auth-controls .theme-switch {
+            position: static !important;
+            margin: 0 !important;
+            background: var(--card-bg) !important;
+            color: #0f172a !important;
+            border: 1px solid rgba(0,0,0,0.1) !important;
+            width: 38px !important;
+            height: 38px !important;
+            padding: 0 !important;
+            font-size: 0.75rem !important;
+        }
+        .auth-controls .theme-switch i {
+            color: #0f172a !important;
+        }
+        body.dark-mode .auth-controls .rtl-toggle, 
+        body.dark-mode .auth-controls .theme-switch {
+            color: #ffffff !important;
+            border-color: rgba(255,255,255,0.1) !important;
+        }
+        body.dark-mode .auth-controls .theme-switch i {
+            color: #ffffff !important;
         }
     </style>
     <!-- Favicon -->
@@ -232,14 +249,13 @@
 
 <body class="auth-page">
 
-    <button class="rtl-toggle shadow-sm" id="rtl-toggle"
-        style="position: fixed; top: 20px; right: 20px; z-index: 1000; margin: 0; background: var(--card-bg) !important;">RTL</button>
-    <button class="theme-switch shadow-sm" id="theme-toggle"
-        style="position: fixed; top: 20px; right: 85px; z-index: 1000; margin: 0; background: var(--card-bg) !important;">
-        <i class="fas fa-moon"></i>
-    </button>
-
     <div class="auth-card fade-in appear">
+        <div class="auth-controls">
+            <button class="theme-switch shadow-sm" id="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="rtl-toggle shadow-sm" id="rtl-toggle">RTL</button>
+        </div>
 
         <a class="brand-logo-container" href="index.html"
             style="justify-content: center; margin-bottom: 25px; margin-top: 50px;">

@@ -387,11 +387,11 @@ body.menu-open {
         justify-content: flex-start !important;
         padding: 55px 20px 40px !important; /* Reduced top padding to start higher */
         overflow-y: auto !important;
-        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease-in-out, visibility 0.3s ease !important;
+        transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.2s ease-in-out, visibility 0.2s ease !important;
         border-top: none !important;
         opacity: 0 !important;
         visibility: hidden !important;
-        transform: translateY(-100%) !important; /* Initial: hidden above screen */
+        transform: translateY(-50%) !important; /* Start closer for faster entrance */
     }
 
     .navbar-collapse.show,
@@ -410,8 +410,8 @@ body.menu-open {
     /* Staggered entrance for menu items */
     .navbar-nav .nav-item {
         opacity: 0;
-        transform: translateY(-10px);
-        transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.35s ease !important;
+        transform: translateY(-5px);
+        transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.2s ease !important;
     }
 
     .navbar-collapse.show .nav-item {
@@ -419,13 +419,13 @@ body.menu-open {
         transform: translateY(0);
     }
 
-    .navbar-collapse.show .nav-item:nth-child(1) { transition-delay: 0.05s; }
-    .navbar-collapse.show .nav-item:nth-child(2) { transition-delay: 0.1s; }
-    .navbar-collapse.show .nav-item:nth-child(3) { transition-delay: 0.15s; }
-    .navbar-collapse.show .nav-item:nth-child(4) { transition-delay: 0.2s; }
-    .navbar-collapse.show .nav-item:nth-child(5) { transition-delay: 0.25s; }
-    .navbar-collapse.show .nav-item:nth-child(6) { transition-delay: 0.3s; }
-    .navbar-collapse.show .nav-item:nth-child(7) { transition-delay: 0.35s; }
+    .navbar-collapse.show .nav-item:nth-child(1) { transition-delay: 0.02s; }
+    .navbar-collapse.show .nav-item:nth-child(2) { transition-delay: 0.04s; }
+    .navbar-collapse.show .nav-item:nth-child(3) { transition-delay: 0.06s; }
+    .navbar-collapse.show .nav-item:nth-child(4) { transition-delay: 0.08s; }
+    .navbar-collapse.show .nav-item:nth-child(5) { transition-delay: 0.1s; }
+    .navbar-collapse.show .nav-item:nth-child(6) { transition-delay: 0.12s; }
+    .navbar-collapse.show .nav-item:nth-child(7) { transition-delay: 0.14s; }
 
     .navbar-nav {
         width: 100%;
@@ -810,6 +810,31 @@ body.dark-mode .btn-outline-secondary {
     box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
 }
 
+/* High Contrast Buttons for Colored Backgrounds */
+.btn-dark {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+.btn-dark:hover {
+    background-color: #000000 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.btn-outline-light {
+    background-color: transparent !important;
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffffff !important;
+    color: var(--secondary) !important;
+    transform: translateY(-3px);
+}
+
 /* Header Specific Button Adjustment */
 .header-btn {
     min-width: 110px;
@@ -823,6 +848,33 @@ body.dark-mode .btn-outline-secondary {
         padding: 0.6rem 1.6rem !important;
         font-size: 0.9rem !important;
     }
+}
+
+/* Fix for small buttons being overridden by global .btn padding */
+.btn-sm {
+    padding: 0.4rem 1.2rem !important;
+    font-size: 0.85rem !important;
+    height: 38px !important; /* Match standard sm input height */
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+/* Ensure search input matches button height */
+.order-search-input {
+    padding-left: 35px !important;
+    height: 38px !important;
+}
+
+/* Fix for input-group overlap and border-radius issues */
+.input-group > .form-control:not(:last-child) {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.input-group > .btn:not(:first-child) {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    margin-left: -1px !important;
 }
 
 /* Responsive Touch/Active Feedback */
@@ -1236,15 +1288,18 @@ body.rtl-mode .footer-social-icons {
 
 /* Login/Signup Specific */
 .auth-page {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(45deg, var(--primary), var(--accent));
+    padding: 40px 0;
+    overflow-y: auto;
 }
 
 .auth-card {
     background: var(--body-bg);
+    margin: auto; /* Vital for vertical scrolling in flex containers */
     padding: 40px;
     border-radius: 15px;
     width: 400px;
