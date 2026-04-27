@@ -6,11 +6,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Theme Switching
-    const themeBtn = document.getElementById('theme-toggle');
+    const themeBtns = document.querySelectorAll('.theme-switch');
     const savedTheme = localStorage.getItem('theme') || 'light';
 
     // RTL Toggle
-    const rtlBtn = document.getElementById('rtl-toggle');
+    const rtlBtns = document.querySelectorAll('.rtl-toggle');
     const isRtl = localStorage.getItem('rtl') === 'true';
 
     // Apply saved states on start
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         enableRtl();
     }
 
-    if (rtlBtn) {
-        rtlBtn.addEventListener('click', () => {
+    rtlBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             const currentlyRtl = document.documentElement.getAttribute('dir') === 'rtl';
             if (currentlyRtl) {
                 disableRtl();
@@ -32,24 +32,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 enableRtl();
             }
         });
-    }
+    });
 
     function enableRtl() {
         document.documentElement.setAttribute('dir', 'rtl');
         document.body.classList.add('rtl-mode');
         localStorage.setItem('rtl', 'true');
-        if (rtlBtn) rtlBtn.innerText = 'LTR';
+        rtlBtns.forEach(btn => btn.innerText = 'LTR');
     }
 
     function disableRtl() {
         document.documentElement.removeAttribute('dir');
         document.body.classList.remove('rtl-mode');
         localStorage.setItem('rtl', 'false');
-        if (rtlBtn) rtlBtn.innerText = 'RTL';
+        rtlBtns.forEach(btn => btn.innerText = 'RTL');
     }
 
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
+    themeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const isDark = document.body.classList.contains('dark-mode');
             const newTheme = isDark ? 'dark' : 'light';
@@ -57,13 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
         });
-    }
+    });
 
     function updateThemeIcon(theme) {
-        const icon = document.querySelector('#theme-toggle i');
-        if (icon) {
-            icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-        }
+        themeBtns.forEach(btn => {
+            const icon = btn.querySelector('i');
+            if (icon) {
+                icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            }
+        });
     }
 
     // Navbar Scroll Effect

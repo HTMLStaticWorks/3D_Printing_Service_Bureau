@@ -53,8 +53,8 @@ body.dark-mode {
     /* Hero Section Tokens */
     --hero-heading: #ffffff;
     --hero-text: #e2e8f0;
-    --hero-overlay: rgba(0, 0, 0, 0.85);
-    --hero-brightness: brightness(0.6);
+    --hero-overlay: rgba(0, 0, 0, 0.45);
+    --hero-brightness: brightness(1.0);
     
     /* Scoped Heading Tokens */
     --heading-color: #ffffff;
@@ -471,14 +471,15 @@ body.menu-open {
         max-width: 160px;
         margin: 0 !important;
         white-space: nowrap;
-        height: 48px !important;
-        font-size: 1rem !important;
+        height: 44px !important;
+        font-size: 0.9rem !important;
     }
 
-    .nav-auth-buttons .rtl-toggle {
+    .nav-auth-buttons .rtl-toggle,
+    .nav-auth-buttons .theme-switch {
         width: auto !important;
-        min-width: 50px;
-        height: 48px !important;
+        min-width: 44px;
+        height: 44px !important;
         font-size: 0.9rem !important;
     }
 
@@ -542,16 +543,17 @@ body.dark-mode .custom-toggler {
 /* Hero Sections */
 /* Standardized Header Buttons */
 .header-btn {
-    padding: 8px 20px !important;
+    padding: 0 20px !important;
     min-width: 100px;
-    height: 42px;
+    height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-weight: 600 !important;
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     border-radius: 8px !important;
     transition: all 0.3s ease !important;
+    line-height: 1 !important;
 }
 
 .header-btn:hover {
@@ -839,7 +841,7 @@ body.dark-mode .btn-outline-secondary {
 .header-btn {
     min-width: 110px;
     height: 44px;
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     padding: 0 20px !important;
 }
 
@@ -1188,7 +1190,7 @@ footer .text-secondary {
     color: var(--heading-color);
     padding: 0 15px;
     border-radius: 8px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     transition: var(--transition);
     cursor: pointer;
@@ -1196,9 +1198,10 @@ footer .text-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 42px;
-    min-width: 42px;
+    height: 44px;
+    min-width: 44px;
     line-height: 1;
+    white-space: nowrap;
 }
 
 .rtl-toggle:hover, .theme-switch:hover {
@@ -1211,6 +1214,49 @@ footer .text-secondary {
 
 body.dark-mode .rtl-toggle, body.dark-mode .theme-switch {
     border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Navbar Alignment & Spacing Refinements */
+@media (min-width: 1200px) {
+    .navbar .container {
+        display: flex !important;
+        align-items: center;
+    }
+
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        flex-grow: 1;
+        align-items: center;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nav-auth-buttons {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+
+    .navbar .order-lg-3 {
+        margin-left: 1rem !important;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 1199px) {
+    .navbar .order-lg-3 {
+        gap: 12px !important;
+        margin-left: auto;
+    }
+}
+
+/* Dashboard Header Spacing */
+.dashboard-content header .d-flex.align-items-center.gap-2 {
+    gap: 1rem !important;
 }
 
 /* RTL Global Adjustments */
@@ -1248,6 +1294,18 @@ body.rtl-mode .ms-lg-3 {
     margin-left: 0 !important;
 }
 
+@media (min-width: 1200px) {
+    body.rtl-mode .nav-auth-buttons {
+        margin-right: 1.5rem !important;
+        margin-left: 1.5rem !important;
+    }
+
+    body.rtl-mode .navbar .order-lg-3 {
+        margin-right: 1rem !important;
+        margin-left: 0 !important;
+    }
+}
+
 /* Fix for dropdown menus in RTL */
 body.rtl-mode .dropdown-menu {
     text-align: right;
@@ -1278,11 +1336,11 @@ body.rtl-mode .footer-social-icons {
 }
 
 /* Toggle Switches Override for better spacing */
-.theme-switch, #rtl-toggle {
+.theme-switch, .rtl-toggle {
     margin-left: 8px;
 }
 
-#rtl-toggle {
+.rtl-toggle {
     min-width: 55px;
 }
 
@@ -1523,8 +1581,39 @@ body.rtl-mode .footer-social-icons {
     .hero-title {
         font-size: 2.5rem;
     }
+    .hero-content .lead {
+        font-size: 1.1rem !important;
+    }
     section {
         padding: 60px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+    }
+    .hero-title br {
+        display: none;
+    }
+    .hero-content {
+        padding: 0 15px;
+        width: 100% !important;
+    }
+    .hero-content .lead {
+        font-size: 1rem !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    .hero-content .lead {
+        font-size: 0.95rem !important;
     }
 }
 
@@ -2081,4 +2170,18 @@ body:not(.dark-mode) .admin-dashboard .table .btn-outline-secondary {
 body:not(.dark-mode) .admin-dashboard .table .btn-outline-secondary:hover {
     background-color: var(--secondary) !important;
     color: #ffffff !important;
+}
+
+/* Mobile Button Alignment Fix */
+@media (max-width: 576px) {
+    .w-100-mobile {
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    
+    .hero-content .d-flex {
+        width: 100%;
+        padding: 0 15px;
+    }
 }

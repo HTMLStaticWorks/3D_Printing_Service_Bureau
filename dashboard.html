@@ -52,6 +52,13 @@
                     <span>Settings</span>
                 </div>
                 <div class="mt-auto pt-5">
+                    <!-- Mobile Toggles in Sidebar -->
+                    <div class="d-flex d-lg-none gap-2 px-3 mb-4">
+                        <button class="rtl-toggle w-50">RTL</button>
+                        <button class="theme-switch w-50">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
                     <a href="index.html" class="sidebar-item text-white text-decoration-none">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
@@ -81,10 +88,13 @@
                             <li><a class="dropdown-item" href="index.html">Sign Out</a></li>
                         </ul>
                     </div>
-                    <button class="rtl-toggle me-2" id="rtl-toggle">RTL</button>
-                    <button class="theme-switch" id="theme-toggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
+                    <!-- Desktop Toggles -->
+                    <div class="d-none d-lg-flex gap-2">
+                        <button class="rtl-toggle">RTL</button>
+                        <button class="theme-switch">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
                 </div>
             </header>
 

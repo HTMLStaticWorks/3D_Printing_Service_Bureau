@@ -38,10 +38,13 @@
             </a>
             
             <div class="d-flex align-items-center order-lg-3 ms-auto gap-2">
-                <button class="rtl-toggle" id="rtl-toggle">RTL</button>
-                <button class="theme-switch" id="theme-toggle" aria-label="Toggle Theme">
-                    <i class="fas fa-moon"></i>
-                </button>
+                <!-- Desktop Toggles -->
+                <div class="d-none d-xl-flex gap-2">
+                    <button class="rtl-toggle">RTL</button>
+                    <button class="theme-switch" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
                 <button class="navbar-toggler border-0 shadow-none p-0 custom-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                     aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
@@ -81,6 +84,13 @@
                 </ul>
                 <div class="nav-auth-buttons d-flex mt-4 mt-lg-0 gap-3 ms-lg-3">
                     <a href="login.html" class="btn btn-primary header-btn">Login</a>
+                    <!-- Mobile Toggles -->
+                    <div class="d-flex d-xl-none gap-2 mt-3 mt-lg-0">
+                        <button class="rtl-toggle">RTL</button>
+                        <button class="theme-switch" aria-label="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
