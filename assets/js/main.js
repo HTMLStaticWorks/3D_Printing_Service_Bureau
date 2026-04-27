@@ -181,6 +181,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (bsCollapse) bsCollapse.hide();
         }
     });
+    
+    // Password Toggle Logic
+    const togglePasswords = document.querySelectorAll('.toggle-password');
+    togglePasswords.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const input = this.closest('.position-relative').querySelector('input');
+            const isPassword = input.getAttribute('type') === 'password';
+            input.setAttribute('type', isPassword ? 'text' : 'password');
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    });
 });
 
 // Extra Styles for back to top button added via JS or CSS

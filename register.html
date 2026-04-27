@@ -38,7 +38,13 @@
                             <div class="col-12"><label class="form-label text-white small">Business Email Address</label><input type="email" class="form-control" required></div>
                             <div class="col-md-6"><label class="form-label text-white small">Industry Sector</label><select class="form-select bg-dark border-secondary border-opacity-25 text-white" required><option>Aerospace</option><option>Medical</option><option>Automotive</option><option>Architecture</option></select></div>
                             <div class="col-md-6"><label class="form-label text-white small">Monthly Potential Units</label><select class="form-select bg-dark border-secondary border-opacity-25 text-white" required><option>1-10 (Prototyping)</option><option>11-100 (SME)</option><option>100+ (Enterprise)</option></select></div>
-                            <div class="col-12 mt-4"><label class="form-label text-white small">Choose Secure Password</label><input type="password" class="form-control" placeholder="••••••••" required></div>
+                            <div class="col-12 mt-4">
+                                <label class="form-label text-white small">Choose Secure Password</label>
+                                <div class="position-relative">
+                                    <input type="password" class="form-control" id="passwordInput" placeholder="••••••••" required>
+                                    <i class="fas fa-eye position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer opacity-50 toggle-password" style="cursor: pointer; z-index: 10;"></i>
+                                </div>
+                            </div>
                         </div>
                         <div class="mb-5 form-check"><input type="checkbox" class="form-check-input" id="termsCheck" required><label class="form-check-label text-body small" for="termsCheck">I agree strictly to the <a href="#" class="text-accent">Industrial Terms of Data Processing</a> and NDAs.</label></div>
                         <button type="submit" class="btn btn-accent text-white w-100 py-3 fw-bold rounded-3">Register Bureau Access</button>
