@@ -27,9 +27,9 @@
     --section-tag-bg: rgba(255, 107, 53, 0.1);
     
     /* Hero Section Tokens */
-    --hero-heading: #0f172a;
-    --hero-text: #222222; 
-    --hero-overlay: rgba(255, 255, 255, 0.6);
+    --hero-heading: #ffffff;
+    --hero-text: #e2e8f0;
+    --hero-overlay: rgba(0, 0, 0, 0.45);
     --hero-brightness: brightness(1.0);
     
     /* Scoped Heading Tokens */
@@ -82,8 +82,8 @@ p:not(.badge p), .lead, .hero-content p, .hero-content .lead {
     -moz-osx-font-smoothing: grayscale;
 }
 
-body:not(.dark-mode) .lead:not(.text-white), 
-body:not(.dark-mode) p.lead:not(.text-white) {
+body:not(.dark-mode) .lead:not(.text-white):not(.hero-section *), 
+body:not(.dark-mode) p.lead:not(.text-white):not(.hero-section *) {
     font-weight: 600 !important; /* Bolder for clarity in Light Mode */
     color: var(--body-text) !important;
 }
@@ -460,27 +460,20 @@ body.menu-open {
         width: 100%;
         display: flex !important;
         flex-direction: row !important;
-        justify-content: center;
-        align-items: center;
-        gap: 12px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 10px !important;
         flex-wrap: nowrap !important;
+        margin-top: 1.5rem !important;
     }
 
-    .nav-auth-buttons .header-btn {
-        flex: 1;
-        max-width: 160px;
-        margin: 0 !important;
-        white-space: nowrap;
-        height: 44px !important;
-        font-size: 0.9rem !important;
-    }
-
+    .nav-auth-buttons .header-btn,
     .nav-auth-buttons .rtl-toggle,
     .nav-auth-buttons .theme-switch {
-        width: auto !important;
-        min-width: 44px;
+        flex: 0 0 auto !important; /* Don't stretch buttons */
+        max-width: 120px !important;
         height: 44px !important;
-        font-size: 0.9rem !important;
+        min-width: 44px !important;
     }
 
     .navbar-nav .dropdown-menu {
@@ -542,18 +535,29 @@ body.dark-mode .custom-toggler {
 
 /* Hero Sections */
 /* Standardized Header Buttons */
-.header-btn {
-    padding: 0 20px !important;
-    min-width: 100px;
-    height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600 !important;
+.header-btn, .theme-switch, .rtl-toggle {
+    height: 44px !important;
+    min-width: 44px !important;
+    padding: 0 15px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
     font-size: 0.9rem !important;
     border-radius: 8px !important;
-    transition: all 0.3s ease !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     line-height: 1 !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    border: 1px solid var(--border-color) !important;
+    background: transparent;
+    color: var(--heading-color) !important;
+}
+
+.header-btn:hover, .theme-switch:hover, .rtl-toggle:hover {
+    transform: translateY(-3px);
+    border-color: var(--secondary) !important;
 }
 
 .header-btn:hover {
@@ -618,7 +622,6 @@ body.dark-mode .custom-toggler {
     background-position: center;
     background-attachment: fixed;
     color: var(--hero-text);
-    transition: var(--transition); /* For background-image fade */
     overflow: hidden;
 }
 
@@ -656,8 +659,8 @@ body.dark-mode .custom-toggler {
 .hero-content p {
     color: var(--hero-text) !important;
     opacity: 1 !important; /* Ensure NO opacity less than 1 is applied */
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Slight text shadow for readability */
-    font-weight: 500; /* Robust font-weight */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) !important; /* Stronger shadow for readability on images */
+    font-weight: 500 !important; /* Robust font-weight */
     line-height: 1.6; /* Improved spacing */
     filter: none !important; /* Remove any filter: blur() */
 }
@@ -1183,34 +1186,7 @@ footer .text-secondary {
     box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
 }
 
-/* RTL & Theme Toggle Buttons */
-.rtl-toggle, .theme-switch {
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--heading-color);
-    padding: 0 15px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: var(--transition);
-    cursor: pointer;
-    text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 44px;
-    min-width: 44px;
-    line-height: 1;
-    white-space: nowrap;
-}
 
-.rtl-toggle:hover, .theme-switch:hover {
-    background-color: var(--secondary) !important;
-    color: #ffffff !important;
-    border-color: var(--secondary) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
-}
 
 body.dark-mode .rtl-toggle, body.dark-mode .theme-switch {
     border-color: rgba(255, 255, 255, 0.15);
@@ -1335,14 +1311,7 @@ body.rtl-mode .footer-social-icons {
     border-color: var(--secondary);
 }
 
-/* Toggle Switches Override for better spacing */
-.theme-switch, .rtl-toggle {
-    margin-left: 8px;
-}
 
-.rtl-toggle {
-    min-width: 55px;
-}
 
 /* Login/Signup Specific */
 .auth-page {

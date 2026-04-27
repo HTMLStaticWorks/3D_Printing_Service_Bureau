@@ -20,12 +20,7 @@
 <body data-bs-spy="scroll" data-bs-target=".navbar">
 
     <!-- Header -->
-    <!-- Header -->
-    <!-- Header -->
-    <!-- Header -->
-    <!-- Header -->
-    <!-- Header -->
-    <nav class="navbar navbar-expand-xl sticky-top">
+<nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand brand-logo-container" href="index.html">
                 <i class="fas fa-cube brand-logo-icon"></i>
@@ -33,12 +28,13 @@
             </a>
 
             <div class="d-flex align-items-center order-lg-3 ms-auto gap-2">
-                <!-- Desktop Toggles -->
-                <div class="d-none d-xl-flex gap-2">
+                                                <!-- Desktop Buttons -->
+                <div class="d-none d-xl-flex gap-2 align-items-center">
                     <button class="rtl-toggle">RTL</button>
                     <button class="theme-switch" aria-label="Toggle Theme">
                         <i class="fas fa-moon"></i>
                     </button>
+                    <a href="login.html" class="btn btn-primary header-btn ms-1">Login</a>
                 </div>
                 <button class="navbar-toggler border-0 shadow-none p-0 custom-toggler collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent"
@@ -78,15 +74,13 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="nav-auth-buttons d-flex mt-4 mt-lg-0 gap-3 ms-lg-3">
+                                                <div class="nav-auth-buttons d-xl-none">
+                    <button class="rtl-toggle">RTL</button>
+                    <button class="theme-switch" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                     <a href="login.html" class="btn btn-primary header-btn">Login</a>
-                    <!-- Mobile Toggles -->
-                    <div class="d-flex d-xl-none gap-2 mt-3 mt-lg-0">
-                        <button class="rtl-toggle">RTL</button>
-                        <button class="theme-switch" aria-label="Toggle Theme">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </div>
+                </div>
                 </div>
             </div>
         </div>
